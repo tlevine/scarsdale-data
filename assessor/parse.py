@@ -26,9 +26,4 @@ def acct(text):
     for k, t in KEYS:
         data[k] = t(re.findall(k + ' ([0-9,.]+)', text)[0].replace(',', ''))
 
-    assessments = re.findall(r'([0-9,]{5,})[ \n](?:COUNTY|VILLAGE|SCHOOL|.*SEWE) TAXABLE', text)
-    if len(assessments) != 2:
-        raise ValueError('I found %d assessments instead of 2.' % len(assessments))
-    print assessments
-
     return data
