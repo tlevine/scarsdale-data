@@ -1,3 +1,4 @@
 #!/bin/sh
 
 wget -O 2012.pdf 'http://www.scarsdale.com/Portals/0/Assessor/2012%20Final%20Roll(PAS).pdf'
+pdftotext 2012.pdf
