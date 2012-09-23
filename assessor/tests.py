@@ -1,3 +1,60 @@
 #!/usr/bin/env python
 import nose.tools as n
+import parse
 
+def test_parse_11_10_87():
+    raw = '''********************************************************************************************** 11.10.87 ***************************
+2 MONTGOMERY RD
+ACCT: 112815000
+11.10.87
+QB
+210 1 FAMILY RES
+COUNTY TAXABLE
+15,775
+O'CONNOR OWEN
+SCARSDALE CENTRAL
+4,300 VILLAGE TAXABLE
+15,775
+O'CONNOR ROSELLA
+ACREAGE 0.12
+SCHOOL TAXABLE
+15,775
+2 MONTGOMERY RD
+FRNT 60.00 DPTH 0.00
+15,775 BS501 BRONX SEWER
+15,775 TO C
+SCARSDALE NY 10583
+DEED BK 41025 PG 0647
+CW501 COUNTY SOLID WA
+15,775 TO
+BANK 79
+FULL MKT VAL 891,242'''
+    n.assert_dict_equal(parse.acct(raw), {
+        'ACCT': 112815000,
+
+        'TAX MAP PARCEL ID': '11.10.87',
+        'CD': 'QB',
+        'CURRENT OWNERS NAME': ["O'CONNOR OWEN", "O'CONNOR ROSELLA"],
+        'CURRENT OWNERS ADDRESS': '2 MONTGOMERY RD\nSCARSDALE NY 10583',
+
+        'PROPERTY LOCATION': '2 MONTGOMERY RD',
+        'PROPERTY CLASS': '210 1 FAMILY RES',
+        'SCHOOL DISTRICT': 'SCARSDALE CENTRAL',
+
+        'PARCEL SIZE/GRID COORD': 'ACREAGE 0.12\nFRNT 60.00 DPTH 0.00\nDEED BK 41025 PG 0647\nBANK 79\nFULL MKT VAL 891,242',
+
+        'ACREAGE': 0.12,
+        'FRNT': 60,
+        'DPTH': 0,
+        'FULL MKT VAL': 891242,
+
+        'LAND ASSESSMENT': 4300,
+        'TOTAL ASSESSMENT': 15775,
+
+#       'COUNTY TAXABLE': 15775,
+#       'VILLAGE TAXABLE': '',
+#       'SCHOOL TAXABLE': '',
+
+        'SEWER': 'BS501 BRONX SEWER',
+        'SOLID WASTE': 'CW501 COUNTY SOLID WA',
+    })
