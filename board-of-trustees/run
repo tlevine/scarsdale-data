@@ -1,0 +1,5 @@
+#!/bin/sh
+
+./download-index.py
+./download-minutes-and-agendas.py
+./rename-minutes-and-agendas.sh
