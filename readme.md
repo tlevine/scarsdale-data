@@ -1,4 +1,4 @@
-Scarsdale Data
+Scarsdale Data-Journalism
 ===================
 
 ## Data sources
