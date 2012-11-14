@@ -1,6 +1,10 @@
 #!/usr/bin/env python
-'Download budget stuff from the scarsdale treasurer, and name it decently.'
+'''
+Download budget stuff from the scarsdale treasurer, and name it decently.
+Also save the url that we asked for and the url to which we were redirected.
+'''
 from urllib import urlretrieve
+from urllib2 import urlopen
 from urlparse import urljoin
 from lxml.html import parse
 
@@ -9,7 +13,7 @@ HOME_URL = 'http://www.scarsdale.com/Home/Departments/VillageTreasurer.aspx'
 def rough_save(url, filename):
     urlretrieve(url, filename = filename)
     f = open(filename + '.url', 'w')
-    f.write(url)
+    f.write(url + '\n' + urlopen(url).url)
     f.close
 
 def homepage():
