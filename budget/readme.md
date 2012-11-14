@@ -10,3 +10,6 @@ body are three tables
 
 It might be fun to pick out the information from these tables. I could look at
 information over time, compare adopted to estimated, and so on.
+
+The statements contain more detailed information, but I haven't yet figured out
+what.
