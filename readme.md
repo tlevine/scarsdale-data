@@ -25,3 +25,7 @@ Tips that Beth photographed
 Tips from CSV from my notebook
 
 ?
+
+## More ideas
+I want a hyper-local indicator of inflation. I think prices at Lange's would
+work pretty well.
