@@ -35,12 +35,12 @@ year,budget,fund,appropriation,Non Prop Tax Revenue,Approp Fund Balance,Amount T
 2010-2011,tentative,INT SVCE CEN GAR,,,,
 2010-2011,tentative,Pool,,,,
 2010-2011,tentative,Water,,,,
-2011-2012,tentative,General Fund,,,,
-2011-2012,tentative,Capital Projects,,,,
-2011-2012,tentative,Public Library,,,,
-2011-2012,tentative,INT SVCE CEN GAR,,,,
-2011-2012,tentative,Pool,,,,
-2011-2012,tentative,Water,,,,
+2011-2012,tentative,General Fund,46955697,13977587,1073000,
+2011-2012,tentative,Capital Projects,7411570,7011570,400000,
+2011-2012,tentative,Public Library,3559095,3463995,95100,
+2011-2012,tentative,INT SVCE CEN GAR,3007956,2784456,223500,
+2011-2012,tentative,Pool,1086751,1098535,-11784,
+2011-2012,tentative,Water,13042122,5623650,7418472,
 2011-2012,adopted,General Fund,46955697,13977587,1073000,31905110
 2011-2012,adopted,Capital Projects,7411570,7011570,400000,0
 2011-2012,adopted,Public Library,3559095,3463995,95100,0
