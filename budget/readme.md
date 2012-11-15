@@ -36,13 +36,17 @@ tax might be the only sort of tax that the village collects; thus, "tax" and
 Tax Rate" fields from appendix A1. These fields are not documented in the
 budget, but here are my guesses as to their meaning.
 
-`assessed.valuation` is the sum of the values of all Scarsdale houses, as
+`assessed` is the sum of the values of all Scarsdale houses, as
 valued by the assessor. The unit is dollars. This was originally "Assessed
 Valuation (000)" in the budget, and the budget uses thousand-dollars as the
 unit.
 
-`tax.rate` (originally "Property Tax Rate") is something about property tax;
-dunno what.
+`tax.rate` (originally "Property Tax Rate") is the proportion of the assessed
+value of a house that is taken as tax; you can think of this as the amount of
+tax in dollars that you must pay for every dollar valuation of the house.
+The original figure is rate per thousand-dollars. The village treasurer page
+([original](http://www.scarsdale.com/Home/Departments/VillageTreasurer.aspx),
+[mirror](treasurer-homepage.html)) was helpful for figuring this out.
 
 ### Funds
 `appendix_a1-tax.csv` contains majority of the A1 tables' data. This table
