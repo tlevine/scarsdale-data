@@ -57,3 +57,20 @@ Revenue".
 
 Finally, it contains the balance from the previous year (`balance`, originally
 "Approp Fund Balance").
+
+## Call the Treasurer
+Call the Treasurer. Explain that I live in Scarsdale, I work as a data
+scientist at a web startup and that separately of that I want to visualize
+the inner-workings of the village government so I and other people can better
+understand how it all works. (This introduction of myself is a bit more buzzy
+than I would ordinarily give.) Then ask these.
+
+1. I'm starting with the budgets, mainly because they were easy to find on the
+    internet. I've managed to understand most of them, but I'm wondering what
+    the "Assessed Valuation (000)" and "Property Tax Rate" fields from appendix
+    A1 are.
+2. I'd like to combine the data from the various tables in the budget. Could
+    you send me whatever Word or Excel files were used to generate the budget
+    PDF document?
+3. Do you have any particular set of documents that you would like the public
+    to know more about?
