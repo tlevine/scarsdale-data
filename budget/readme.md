@@ -74,4 +74,14 @@ documents
 
 Eventually, I want to ask "Do you have any particular set of documents that you would like the public to know more about?"
 
+## Reduction in expenditures following the 2008 crash
+The village substantially reduced expenditures after the 2008 crash, mainly in
+the capital projects fund.
 
+(I have a graph.)
+
+What exactly was cut? The fund's appropriation typically increases by a couple
+million dollars each year, but the appropriation was decreased by about
+$20 million in 2009-2010. More specifically, public building costs were
+decreased by about $11.5 million, and highway improvement costs were decreased
+by about $8.5 million. (See page 109 of the [2009-2010 budget](2009-2010_adopted_budget.pdf))
