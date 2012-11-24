@@ -29,3 +29,7 @@ Tips from CSV from my notebook
 ## More ideas
 I want a hyper-local indicator of inflation. I think prices at Lange's would
 work pretty well.
+
+## FOIL form
+Scarsdale has a [form](http://www.scarsdale.com/Portals/0/Clerk/foil-form.pdf)
+for FOI requests.
