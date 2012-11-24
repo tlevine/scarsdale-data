@@ -74,8 +74,8 @@ documents
 
 Eventually, I want to ask "Do you have any particular set of documents that you would like the public to know more about?"
 
-## Reduction in expenditures following the 2008 crash
-The village substantially reduced expenditures after the 2008 crash, mainly in
+## Reduction in expenditures following the 2008
+The village substantially reduced expenditures after 2008, mainly in
 the capital projects fund.
 
 (I have a graph.)
@@ -85,3 +85,11 @@ million dollars each year, but the appropriation was decreased by about
 $20 million in 2009-2010. More specifically, public building costs were
 decreased by about $11.5 million, and highway improvement costs were decreased
 by about $8.5 million. (See page 109 of the [2009-2010 budget](2009-2010_adopted_budget.pdf))
+
+The decrease in public building cost can be explained by reduced work on the
+Public Safety HQ Renovation/Expansion, which had cost $12 million in 2008-2009.
+(See page 117 of the [2009-2010 budget](2009-2010_adopted_budget.pdf))
+
+The decrease in highway improvement cost can be explained by reduced bridge
+construction, for which about $9 million had been allocated in 2009-2010.
+(See page 119 of the [2009-2010 budget](2009-2010_adopted_budget.pdf))
