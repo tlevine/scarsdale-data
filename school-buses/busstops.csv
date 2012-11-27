@@ -1,6 +1,6 @@
-route.name, route.number,   stop.id,   time,   n.students, location
-HS 22 AM,           145,     2,
-HS 22 AM,           145,     3,
+route.name,route.number,stop.id,time,   n.students, location
+HS 22 AM,           145,     2, 7:13 am,
+HS 22 AM,           145,     3, 7:   am,
 HS 22 AM,           145,     4,
 HS 22 AM,           145,     5,
 HS 22 AM,           145,     6,
