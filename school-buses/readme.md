@@ -5,5 +5,7 @@ Scarsdale High School bus schedules are
 
 Let's make a map of them!
 
+I'm manually transcribing it.
+
 I doubt the Scarsdale High School bus schedule has changed in decades, so I
 imagine that work on this will remain useful for a while.
