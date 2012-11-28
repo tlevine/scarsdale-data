@@ -1,10 +1,16 @@
-Here is information that I obtained from my Grandmother, who has lived in
+Here is information that I obtained from my grandmother, who has lived in
 Scarsdale for quite a while.
 
 ## Tax bills
 I looked at her village, school and county tax bills from 2003 until 2013.
 (The county uses the calendar year as the fiscal year, but the village
 uses July to June as the fiscal year.)
+
+### Tax rates
+
+The assessed value of her house didn't change during this time, so this
+is almost enough informamtion to calculate her tax rate. All that's
+missing is her exemptions.
 
 ### Estimated market value
 Each year, a figure is provided to estimate the market value of a house
