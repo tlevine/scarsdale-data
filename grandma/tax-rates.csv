@@ -2,7 +2,7 @@ year, bill,     tax,        rate
 2003, village,  village,    150.0063
 2003, school,   scarsdale,  577.95
 2003, school,   mamaroneck, 563.45
-2003, county,   county,     147.97
+2003, county,   water,      147.97
 2003, county,   bronx,       18.44
 2003, county,   hutchinson,  22.35
 2003, county,   mamaroneck,  22.43
@@ -10,7 +10,7 @@ year, bill,     tax,        rate
 2004, village,  village,    
 2004, school,   scarsdale,  
 2004, school,   mamaroneck, 
-2004, county,   county,     
+2004, county,   water,      
 2004, county,   bronx,      
 2004, county,   hutchinson, 
 2004, county,   mamaroneck, 
@@ -18,7 +18,7 @@ year, bill,     tax,        rate
 2005, village,  village,    
 2005, school,   scarsdale,  
 2005, school,   mamaroneck, 
-2005, county,   county,     
+2005, county,   water,      
 2005, county,   bronx,      
 2005, county,   hutchinson, 
 2005, county,   mamaroneck, 
@@ -26,7 +26,7 @@ year, bill,     tax,        rate
 2006, village,  village,    173.86
 2006, school,   scarsdale,  713.16
 2006, school,   mamaroneck, 662.47
-2006, county,   county,     169.78
+2006, county,   water,      169.78
 2006, county,   bronx,       19.83
 2006, county,   hutchinson,  24.83
 2006, county,   mamaroneck,  25.58
@@ -34,7 +34,7 @@ year, bill,     tax,        rate
 2007, village,  village,    180.62
 2007, school,   scarsdale,  732.89
 2007, school,   mamaroneck, 638.72
-2007, county,   county,     187.97
+2007, county,   water,      187.97
 2007, county,   bronx,       26.88
 2007, county,   hutchinson,  26.91
 2007, county,   mamaroneck,  32.94
@@ -42,7 +42,7 @@ year, bill,     tax,        rate
 2008, village,  village,    190.36
 2008, school,   scarsdale,  769.56
 2008, school,   mamaroneck, 729.80
-2008, county,   county,     184.22
+2008, county,   water,      184.22
 2008, county,   bronx,       26.10
 2008, county,   hutchinson,  26.36
 2008, county,   mamaroneck,  30.90
@@ -50,7 +50,7 @@ year, bill,     tax,        rate
 2009, village,  village,     NA
 2009, school,   scarsdale,  782.69
 2009, school,   mamaroneck, 792.35
-2009, county,   county,     181.58
+2009, county,   water,      181.58
 2009, county,   bronx,       26.47
 2009, county,   hutchinson,  27.60
 2009, county,   mamaroneck,  30.49
@@ -58,7 +58,7 @@ year, bill,     tax,        rate
 2010, village,  village,    
 2010, school,   scarsdale,  
 2010, school,   mamaroneck, 
-2010, county,   county,     
+2010, county,   water,      
 2010, county,   bronx,      
 2010, county,   hutchinson, 
 2010, county,   mamaroneck, 
@@ -66,7 +66,7 @@ year, bill,     tax,        rate
 2011, village,  village,    
 2011, school,   scarsdale,  
 2011, school,   mamaroneck, 
-2011, county,   county,     
+2011, county,   water,      
 2011, county,   bronx,      
 2011, county,   hutchinson, 
 2011, county,   mamaroneck, 
@@ -74,7 +74,7 @@ year, bill,     tax,        rate
 2012, village,  village,    
 2012, school,   scarsdale,  
 2012, school,   mamaroneck, 
-2012, county,   county,     
+2012, county,   water,      
 2012, county,   bronx,      
 2012, county,   hutchinson, 
 2012, county,   mamaroneck, 

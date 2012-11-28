@@ -25,18 +25,20 @@ different parts of the town/village or county. The bill states the tax rate for
 my grandmother's specific area, adjusts for exemptions and computes the dollar
 tax amount.
 
-I collected tax rate by year for the following taxes in the file `tax-rates.csv`.
+I collected tax rate by year for the following taxes in the file
+`tax-rates.csv`. The bolded words are used as codes for the `bill` and `tax`
+factors in the spreadsheet.
 
-* Village tax
-* School tax
-  * Town of Mamaroneck
-  * Town of Scarsdale
-* County?
-  * County...
-  * Bronx...
-  * Hutchinson...
-  * Mamaroneck...
-  * Refuse...
+* **Village** Tax
+* **School** Tax
+  * Town of **Mamaroneck**
+  * Town of **Scarsdale**
+* **County** taxes
+  * County and **Water** District Tax
+  * **Bronx**
+  * **Hutchinson**
+  * **Mamaroneck**
+  * **Refuse**
 
 The budget and the tax bills express this rate in permil (dollars per
 one-thousand dollars of assessed value), so that is the manner in which I have
