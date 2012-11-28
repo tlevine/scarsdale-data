@@ -15,14 +15,14 @@ year, bill,     tax,        rate
 2004, county,   hutchinson,  23.77
 2004, county,   mamaroneck,  23.04
 2004, county,   refuse,      20.82
-2005, village,  village,    
-2005, school,   scarsdale,  
-2005, school,   mamaroneck, 
-2005, county,   water,      
-2005, county,   bronx,      
-2005, county,   hutchinson, 
-2005, county,   mamaroneck, 
-2005, county,   refuse,     
+2005, village,  village,    167.360000
+2005, school,   scarsdale,  682.795900
+2005, school,   mamaroneck,  NA
+2005, county,   water,      158.06 
+2005, county,   bronx,       18.14
+2005, county,   hutchinson,  23.54
+2005, county,   mamaroneck,  22.43
+2005, county,   refuse,      18.82
 2006, village,  village,    173.86
 2006, school,   scarsdale,  713.16
 2006, school,   mamaroneck, 662.47
