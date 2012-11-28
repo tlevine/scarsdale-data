@@ -35,10 +35,10 @@ factors in the spreadsheet.
   * Town of **Scarsdale**
 * **County** taxes
   * County and **Water** District Tax
-  * **Bronx**
-  * **Hutchinson**
-  * **Mamaroneck**
-  * **Refuse**
+  * **Bronx** Valley Sanitary Sewer Tax in Town of Scarsdale
+  * **Hutchinson** Valley Sanitary Sewer Tax in Town of Scarsdale
+  * **Mamaroneck** Valley Sanitary Sewer Tax in Town of Scarsdale
+  * **Refuse** Disposal District No. 1 Tax in Town of Scarsdale
 
 The budget and the tax bills express this rate in permil (dollars per
 one-thousand dollars of assessed value), so that is the manner in which I have
