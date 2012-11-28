@@ -25,7 +25,7 @@ different parts of the town/village or county. The bill states the tax rate for
 my grandmother's specific area, adjusts for exemptions and computes the dollar
 tax amount.
 
-I collected tax rate by year for the following taxes.
+I collected tax rate by year for the following taxes in the file `tax-rates.csv`.
 
 * Village tax
 * School tax
