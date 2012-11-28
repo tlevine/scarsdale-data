@@ -4,7 +4,13 @@ Scarsdale for quite a while.
 ## Tax bills
 I looked at her village, school and county tax bills from 2003 until 2013.
 (The county uses the calendar year as the fiscal year, but the village
-uses July to June as the fiscal year.)
+uses July to June as the fiscal year.) I recorded some relevant data that
+are explained below.
+
+For village and school taxes, whose fiscal year is two calendar years,
+the first of those years is used to identify the fiscal year. For example,
+taxes for 2008-2009 are recorded as year "2008". This makes them line up
+with the year of county taxes that gets paid at the same time.
 
 ### Tax rates
 
