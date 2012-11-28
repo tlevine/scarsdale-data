@@ -23,30 +23,30 @@ year, bill,     tax,        rate
 2005, county,   hutchinson, 
 2005, county,   mamaroneck, 
 2005, county,   refuse,     
-2006, village,  village,    180.62
-2006, school,   scarsdale,  732.89
-2006, school,   mamaroneck, 638.72
-2006, county,   county,     187.97
-2006, county,   bronx,       26.88
-2006, county,   hutchinson,  26.91
-2006, county,   mamaroneck,  32.94
-2006, county,   refuse,      20.82
-2007, village,  village,    
-2007, school,   scarsdale,  
-2007, school,   mamaroneck, 
-2007, county,   county,     
-2007, county,   bronx,      
-2007, county,   hutchinson, 
-2007, county,   mamaroneck, 
-2007, county,   refuse,     
-2008, village,  village,    
-2008, school,   scarsdale,  
-2008, school,   mamaroneck, 
-2008, county,   county,     
-2008, county,   bronx,      
-2008, county,   hutchinson, 
-2008, county,   mamaroneck, 
-2008, county,   refuse,     
+2006, village,  village,    173.86
+2006, school,   scarsdale,  713.16
+2006, school,   mamaroneck, 662.47
+2006, county,   county,     169.78
+2006, county,   bronx,       19.83
+2006, county,   hutchinson,  24.83
+2006, county,   mamaroneck,  25.58
+2006, county,   refuse,      19.60
+2007, village,  village,    180.62
+2007, school,   scarsdale,  732.89
+2007, school,   mamaroneck, 638.72
+2007, county,   county,     187.97
+2007, county,   bronx,       26.88
+2007, county,   hutchinson,  26.91
+2007, county,   mamaroneck,  32.94
+2007, county,   refuse,      20.82
+2008, village,  village,    190.36
+2008, school,   scarsdale,  769.56
+2008, school,   mamaroneck, 729.80
+2008, county,   county,     184.22
+2008, county,   bronx,       26.10
+2008, county,   hutchinson,  26.36
+2008, county,   mamaroneck,  30.90
+2008, county,   refuse,      17.48
 2009, village,  village,    
 2009, school,   scarsdale,  
 2009, school,   mamaroneck, 
