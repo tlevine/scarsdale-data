@@ -48,6 +48,12 @@ The assessed value of her house didn't change during this time, so this
 is almost enough informamtion to calculate the tax she paid; all that's
 missing is her exemptions.
 
+In some cases, I used the value from the bill rather than the pamphlet. In
+some cases, this is because I had begun collecting data from the bills before
+I had realized the pamphlet existed. In other cases, it is because the pamphlet
+was missing. I am missing data for four tax rates (`NA`) for which my
+grandmother had neither the pamphlet or the bill.
+
 ### Estimated market value
 Each year, a figure is provided to estimate the market value of a house
 given the assessed value of a house; it is called the "percent to estimate
