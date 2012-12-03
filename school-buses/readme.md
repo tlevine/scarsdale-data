@@ -26,8 +26,6 @@ Here are some funny things I noticed:
     ...
     HS 28 AM,           155,    15, 7:21 am,      1,WEAVER ST & HWY 125 & CO HWY 129 & WEAVER ST & HWY 125 & CO HWY 129 & HILLANDALE DR &  HILLANDDALE DR & HILLANDALE CLOSE
     ...
-    HS 29 AM,           148,    16, 7:32 am,      5,COLONIAL RD & MAYFLOWER RD
-    HS 29 AM,           148,    17, 7:33 am,      4,COLONIAL RD & MAYFLOWER RD
 
 ## Maps
 Here are some ideas.
