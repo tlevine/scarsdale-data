@@ -21,6 +21,7 @@ Here are some funny things I noticed:
 
 * Trip `HS 25 AM` (157) has two stops at the same time and place,
    7:27 am at "ROCK CREEK LN & SYCAMORE RD".
+* Trip `HS 28 AM` (155) lists "OLD WHITE PLAINS RD" twice in the second stop (7:02 am).
 
 ## Maps
 Here are some ideas.
