@@ -17,6 +17,11 @@ Here are some checks of the data:
 * The time for a stop should be greater than or equal to the previous stop's time.
 * Different trips (by name) with the same route (by number) should have the same stops in reversed ourder.
 
+Here are some funny things I noticed:
+
+* Trip `HS 25 AM` (157) has two stops at the same time and place,
+   7:27 am at "ROCK CREEK LN & SYCAMORE RD".
+
 ## Maps
 Here are some ideas.
 
