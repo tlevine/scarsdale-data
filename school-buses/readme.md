@@ -19,9 +19,15 @@ Here are some checks of the data:
 
 Here are some funny things I noticed:
 
-* Trip `HS 25 AM` (157) has two stops at the same time and place,
-   7:27 am at "ROCK CREEK LN & SYCAMORE RD".
-* Trip `HS 28 AM` (155) lists "OLD WHITE PLAINS RD" twice in the second stop (7:02 am).
+    HS 25 AM,           157,    10, 7:27 am,      0,ROCK CREEK LN & SYCAMORE RD
+    HS 25 AM,           157,    11, 7:27 am,      6,ROCK CREEK LN & SYCAMORE RD
+    ...
+    HS 28 AM,           155,     3, 7:02 am,      2,OLD WHITE PLAINS RD & WELLHOUSE CLOSE & OLD WHITE PLAINS RD
+    ...
+    HS 28 AM,           155,    15, 7:21 am,      1,WEAVER ST & HWY 125 & CO HWY 129 & WEAVER ST & HWY 125 & CO HWY 129 & HILLANDALE DR &  HILLANDDALE DR & HILLANDALE CLOSE
+    ...
+    HS 29 AM,           148,    16, 7:32 am,      5,COLONIAL RD & MAYFLOWER RD
+    HS 29 AM,           148,    17, 7:33 am,      4,COLONIAL RD & MAYFLOWER RD
 
 ## Maps
 Here are some ideas.
