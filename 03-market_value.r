@@ -13,14 +13,26 @@ inflation <- data.frame(
   CPIAUCSL.2012 = as.vector(inflation.xts[,1] / CPIAUCSL['2012-05-01'][[1]])
 )
 
+# Munge
 market.value <- read.csv('grandma/market-value.csv')
 market.value$value.10000 <- 10000 / (market.value$percent.to.market / 100)
 market.value <- join(market.value, inflation)
+
+#
+# Plot
+#
+
+# Label position
+.text.y <- market.value$value.10000 - 30000
+names(.text.y) <- market.value$year
+.text.y['2008'] <- .text.y['2008'] + 70000
+
+# Plot
 market.value.plot <- ggplot(market.value) +
   aes(x = CPIAUCSL.2012, y = value.10000) +
   aes(label = paste(year, '\n(', percent.to.market, '%)', sep = '')) +
   scale_x_continuous('Value of a dollar in 2012 dollars', labels = dollar) +
   scale_y_continuous('Nominal market value of a house assessed at $10,000',
-    labels = dollar, limits = c(0, max(market.value$value.10000))) +
-  geom_text(y = market.value$value.10000 - 30000) +
-  geom_line()
+    labels = dollar, limits = c(0, 700000)) +
+  geom_text(y = .text.y) +
+  geom_path()
