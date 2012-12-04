@@ -295,24 +295,24 @@ HS 70 PM(3:10),     157,     9, 3:34 pm,      0,JENNY CLOSE & MARBOURNE DR
 HS 70 PM(3:10),     157,    10, 3:36 pm,      0,MARBOURNE DR & PRINCE WILLOW LN
 HS 70 PM(3:10),     157,    11, 3:37 pm,     -2,DORIS RD & PRINCE WILLOW LN
 HS 70 PM(3:10),     157,    12, 3:40 pm,      0,GRIFFEN AVENUE & BRITTANY CLOSE & GRIFFEN AVENUE
-HS 70 PM(3:10),     157,    13, 3:41 pm,     -1,
-HS 70 PM(3:10),     157,    14, 3:42 pm,     -7,
-HS 70 PM(3:10),     157,    15, 3:45 pm,     -1,
-HS 70 PM(3:10),     157,    16, 3:46 pm,     -1,
-HS 70 PM(3:10),     157,    17, 3:47 pm,     -1,
-HS 70 PM(3:10),     157,    18, 3:48 pm,     -1,
-HS 70 PM(3:10),     157,    19, 3:49 pm,     -2,
-HS 70 PM(3:10),     157,    20, 3:50 pm,      0,
-HS 70 PM(3:10),     157,    21, 3:51 pm,     -2,
-HS 70 PM(3:10),     157,    22, 3:52 pm,     -6,
-HS 70 PM(3:10),     157,    23, 3:55 pm,     -8,
-HS 70 PM(3:10),     157,    24, 3:57 pm,     -4,
-HS 70 PM(3:10),     157,    25, 3:59 pm,     -1,
-HS 70 PM(3:10),     157,    26, 4:00 pm,     -2,
-HS 70 PM(3:10),     157,    27, 4:01 pm,     -2,
-HS 70 PM(3:10),     157,    28, 4:02 pm,      0,
-HS 70 PM(3:10),     157,    29, 4:04 pm,     -2,
-HS 70 PM(3:10),     157,    30, 4:06 pm,     -3,
+HS 70 PM(3:10),     157,    13, 3:41 pm,     -1,217 GRIFFEN AVENUE
+HS 70 PM(3:10),     157,    14, 3:42 pm,     -7,GRIFFEN AVE & MURDOCK RD
+HS 70 PM(3:10),     157,    15, 3:45 pm,     -1,70 GRIFFEN AVENUE
+HS 70 PM(3:10),     157,    16, 3:46 pm,     -1,103 GRIFFEN AVENUE
+HS 70 PM(3:10),     157,    17, 3:47 pm,     -1,NORMANDY LN & GRIFFEN
+HS 70 PM(3:10),     157,    18, 3:48 pm,     -1,GRAND PK AVE & GRIFFEN AVE
+HS 70 PM(3:10),     157,    19, 3:49 pm,     -2,CORNELL ST & FENIMORE RD & GRAND PARK AVE & GRAND PK AVE
+HS 70 PM(3:10),     157,    20, 3:50 pm,      0,12 CORNELL ST
+HS 70 PM(3:10),     157,    21, 3:51 pm,     -2,COPPER BEECH LN & WEAVER ST
+HS 70 PM(3:10),     157,    22, 3:52 pm,     -6,BRADFORD RD & WEAVER ST
+HS 70 PM(3:10),     157,    23, 3:55 pm,     -8,MEADOW RD & OLD LYME RD
+HS 70 PM(3:10),     157,    24, 3:57 pm,     -4,HERKIMER RD & HUTCHINSON AVE & MEADOW RD
+HS 70 PM(3:10),     157,    25, 3:59 pm,     -1,HUTCHINSON AVE & WEAVER ST
+HS 70 PM(3:10),     157,    26, 4:00 pm,     -2,GATEHOUSE RD & HAVERFORD AVE
+HS 70 PM(3:10),     157,    27, 4:01 pm,     -2,FRANKLIN RD & HAVERFORD AVE
+HS 70 PM(3:10),     157,    28, 4:02 pm,      0,112 PENN RD
+HS 70 PM(3:10),     157,    29, 4:04 pm,     -2,2 PENN BLVD
+HS 70 PM(3:10),     157,    30, 4:06 pm,     -3,FRANKLIN RD & STRATTON RD
 HS 74 PM(4:15),      95,     2, 4:15 pm,      0,
 HS 74 PM(4:15),      95,     3, 4:19 pm,      0,
 HS 74 PM(4:15),      95,     4, 4:26 pm,      0,
