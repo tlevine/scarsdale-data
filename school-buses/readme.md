@@ -35,6 +35,15 @@ Here are some funny things I noticed:
     HS 74 PM(4:15),      95,    20, 4:50 pm,      0,HAVERFORD AVE & WEAVER ST & HWY 125 & WEAVER ST & HWY 125
     HS 74 PM(4:15),      95,    21, 4:51 pm,      0,BRADFORD RD & WEAVER ST & HWY 125 & CO HWY 129 & WEAVER ST & HWY 125 & CO HWY 129
     ...
+    HS 74 PM(4:15),      95,    23, 4:54 pm,      0,GRIFFEN AVENUE & GRAND PK AVE & GRIFFEN AVENUE
+    HS 74 PM(4:15),      95,    24, 4:56 pm,      0,GRIFFEN AVENUE & MURDOCK RD & GRIFFEN AVENUE
+    ...
+    HS 74 PM(4:15),      95,    26, 4:59 pm,      0,FAIRWAY DR & BARNWALL LN & FAIRWAY DR
+    HS 74 PM(4:15),      95,    27, 5:00 pm,      0,MAMARONECK RD & BARKER LN & MAMARONECK RD
+    HS 74 PM(4:15),      95,    28, 5:01 pm,      0,MAMARONECK RD & COLONIAL RD & MAMARONECK RD
+    HS 74 PM(4:15),      95,    29, 5:01 pm,      0,MAMARONECK RD & MAMARONECK RD & STRATTON RD
+
+Also, several other rows have "location[s]" at three-street intersections.
 
 ## Maps
 Here are some ideas.
