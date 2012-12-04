@@ -39,3 +39,10 @@ market.value.plot <- ggplot(market.value) +
 Well it\'s apparently not just an inflation adjustment.') +
   geom_text(y = .text.y) +
   geom_path()
+
+p <- function() {
+  pdf('plots/03-market_value.pdf', width = 11, height = 8.5)
+  print(market.value.plot)
+  dev.off()
+}
+p()

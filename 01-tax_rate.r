@@ -43,3 +43,12 @@ adj.tax.by.inflation <- ggplot(melt(tax, c('year', 'budget', 'CPIAUCSL.2009', 'C
   scale_x_discrete('Year') +
   scale_y_continuous('Inflation-adjusted village tax rate (percent of assessed value)', labels = percent) +
   geom_text() + geom_line()
+
+p <- function() {
+  pdf('plots/01-tax_rate.pdf', width = 11, height = 8.5)
+  print(tax.by.year)
+  print(tax.by.inflation)
+  print(adj.tax.by.inflation)
+  dev.off()
+}
+p()
