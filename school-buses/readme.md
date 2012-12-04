@@ -30,6 +30,11 @@ Here are some funny things I noticed:
     ...
     HS 74 PM(4:15),      95,     3, 4:19 pm,      0,WHITE RD & SPRAGUE RD & SPRAGUE AVE & SPRAGUE RD & SPRAGUE AVE & WHITE RD
     ...
+    HS 74 PM(4:15),      95,    18, 4:45 pm,      0,MAMARONECK RD & MAMARONECK RD & CARTHAGE RD
+    HS 74 PM(4:15),      95,    19, 4:47 pm,      0,INNES RD & HEATHCOTE RD & HEATHCOTE RD
+    HS 74 PM(4:15),      95,    20, 4:50 pm,      0,HAVERFORD AVE & WEAVER ST & HWY 125 & WEAVER ST & HWY 125
+    HS 74 PM(4:15),      95,    21, 4:51 pm,      0,BRADFORD RD & WEAVER ST & HWY 125 & CO HWY 129 & WEAVER ST & HWY 125 & CO HWY 129
+    ...
 
 ## Maps
 Here are some ideas.
