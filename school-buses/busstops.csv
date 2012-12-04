@@ -235,66 +235,66 @@ HS 62 PM,           148,    20, 2:47 pm,      0,67 WEAVER ST
 HS 62 PM,           148,    21, 2:48 pm,      0,35 WEAVER STREET
 HS 62 PM,           148,    22, 2:49 pm,      0,9 WEAVER STREET
 HS 63 PM,           156,     2, 2:10 pm,     27,SENIOR HIGH SCHOOL (007)
-HS 63 PM,           156,     3, 2:22 pm,    -15,
-HS 63 PM,           156,     4, 2:29 pm,     -7,
-HS 63 PM,           156,     5, 2:31 pm,     -5,
+HS 63 PM,           156,     3, 2:22 pm,    -15,SPRAGUE RD & WHITE RD
+HS 63 PM,           156,     4, 2:29 pm,     -7,CROSSWAY & HEATHCOTE RD
+HS 63 PM,           156,     5, 2:31 pm,     -5,ARDMORE RD & CROSSWAY
 HS 64/72 PM(3:10),  156,     2, 3:10 pm,     49,SENIOR HIGH SCHOOL (007)
-HS 64/72 PM(3:10),  156,     3, 3:21 pm,    -13,
-HS 64/72 PM(3:10),  156,     4, 3:30 pm,     -7,
-HS 64/72 PM(3:10),  156,     5, 3:32 pm,     -6,
-HS 64/72 PM(3:10),  156,     6, 3:34 pm,     -5,
-HS 64/72 PM(3:10),  156,     7, 3:36 pm,     -2,
-HS 64/72 PM(3:10),  156,     8, 3:37 pm,     -1,
-HS 64/72 PM(3:10),  156,     9, 3:38 pm,     -1,
-HS 64/72 PM(3:10),  156,    10, 3:40 pm,     -7,
-HS 64/72 PM(3:10),  156,    11, 3:42 pm,     -1,
-HS 64/72 PM(3:10),  156,    12, 3:43 pm,     -6,
+HS 64/72 PM(3:10),  156,     3, 3:21 pm,    -13,SPRAGUE DR & WHITE RD
+HS 64/72 PM(3:10),  156,     4, 3:30 pm,     -7,GREENACRES AVE & WALWORTH AVE
+HS 64/72 PM(3:10),  156,     5, 3:32 pm,     -6,BROOK LN & WALWORTH AVE
+HS 64/72 PM(3:10),  156,     6, 3:34 pm,     -5,RIVER RD & WALWORTH AVE
+HS 64/72 PM(3:10),  156,     7, 3:36 pm,     -2,CLAREMONT RD & WALWORTH AVE
+HS 64/72 PM(3:10),  156,     8, 3:37 pm,     -1,FARLEY RD & FARLEY RD & BREWSTER RD
+HS 64/72 PM(3:10),  156,     9, 3:38 pm,     -1,180 BREWSTER ROAD
+HS 64/72 PM(3:10),  156,    10, 3:40 pm,     -7,BERKELEY RD & GREENACRES AVE & KINGSTON RD
+HS 64/72 PM(3:10),  156,    11, 3:42 pm,     -1,FARLEY RD & VALLEY RD
+HS 64/72 PM(3:10),  156,    12, 3:43 pm,     -6,GORHAM RD & MONTROSE RD
 HS 66 PM(3:10),     144,     2, 3:10 pm,     75,SENIOR HIGH SCHOOL (007)
-HS 66 PM(3:10),     144,     3, 3:25 pm,     -3,
-HS 66 PM(3:10),     144,     4, 3:26 pm,     -4,
-HS 66 PM(3:10),     144,     5, 3:28 pm,     -7,
-HS 66 PM(3:10),     144,     6, 3:31 pm,     -3,
-HS 66 PM(3:10),     144,     7, 3:33 pm,     -3,
-HS 66 PM(3:10),     144,     8, 3:36 pm,     -1,
-HS 66 PM(3:10),     144,     9, 3:37 pm,     -2,
-HS 66 PM(3:10),     144,    10, 3:40 pm,     -7,
-HS 66 PM(3:10),     144,    11, 3:42 pm,     -5,
-HS 66 PM(3:10),     144,    12, 3:43 pm,     -1,
-HS 66 PM(3:10),     144,    13, 3:44 pm,    -10,
-HS 66 PM(3:10),     144,    14, 3:47 pm,     -7,
-HS 66 PM(3:10),     144,    15, 3:49 pm,     -8,
-HS 66 PM(3:10),     144,    16, 3:51 pm,     -6,
-HS 66 PM(3:10),     144,    17, 3:53 pm,     -5,
-HS 66 PM(3:10),     144,    18, 3:55 pm,     -3,
+HS 66 PM(3:10),     144,     3, 3:25 pm,     -3,6 DICKEL RD
+HS 66 PM(3:10),     144,     4, 3:26 pm,     -4,FAIRVIEW RD & GREENDALE RD
+HS 66 PM(3:10),     144,     5, 3:28 pm,     -7,ETON RD & WINDMILL LN
+HS 66 PM(3:10),     144,     6, 3:31 pm,     -3,80 GARDEN RD
+HS 66 PM(3:10),     144,     7, 3:33 pm,     -3,CUSHMAN RD & WILLOW LN
+HS 66 PM(3:10),     144,     8, 3:36 pm,     -1,1 MOHICAN TRAIL
+HS 66 PM(3:10),     144,     9, 3:37 pm,     -2,COLBY LN & SHELDRAKE RD
+HS 66 PM(3:10),     144,    10, 3:40 pm,     -7,CANTERBURY RD & LEATHERSTOCKING LN
+HS 66 PM(3:10),     144,    11, 3:42 pm,     -5,CANTERBURY RD & MAMARONECK RD
+HS 66 PM(3:10),     144,    12, 3:43 pm,     -1,187 MAMARONECK RD
+HS 66 PM(3:10),     144,    13, 3:44 pm,    -10,FOXHALL RD & SECOR RD
+HS 66 PM(3:10),     144,    14, 3:47 pm,     -7,SECOR RD & WYNMOR RD
+HS 66 PM(3:10),     144,    15, 3:49 pm,     -8,LAWRENCE RD & LINCOLN RD
+HS 66 PM(3:10),     144,    16, 3:51 pm,     -6,LINCOLN RD & FARRAGUT ROAD
+HS 66 PM(3:10),     144,    17, 3:53 pm,     -5,HARVEST DR & RURAL DR
+HS 66 PM(3:10),     144,    18, 3:55 pm,     -3,CARTHAGE RD & MAMARONECK RD
 HS 68 PM(3:10),     142,     2, 3:10 pm,     54,SENIOR HIGH SCHOOL (007)
-HS 68 PM(3:10),     142,     3, 3:18 pm,     -1,
-HS 68 PM(3:10),     142,     4, 3:20 pm,     -2,
-HS 68 PM(3:10),     142,     5, 3:21 pm,     -2,
-HS 68 PM(3:10),     142,     6, 3:22 pm,     -5,
-HS 68 PM(3:10),     142,     7, 3:23 pm,     -3,
-HS 68 PM(3:10),     142,     8, 3:25 pm,     -6,
-HS 68 PM(3:10),     142,     9, 3:26 pm,      0,
-HS 68 PM(3:10),     142,    10, 3:27 pm,     -3,
-HS 68 PM(3:10),     142,    11, 3:28 pm,     -9,
-HS 68 PM(3:10),     142,    12, 3:30 pm,     -4,
-HS 68 PM(3:10),     142,    13, 3:32 pm,    -15,
-HS 68 PM(3:10),     142,    14, 3:34 pm,     -4,
+HS 68 PM(3:10),     142,     3, 3:18 pm,     -1,MARJORY LN & SECOR RD
+HS 68 PM(3:10),     142,     4, 3:20 pm,     -2,HAZELTON DR & NORMA PL & HAZELTON DR
+HS 68 PM(3:10),     142,     5, 3:21 pm,     -2,CORALYN RD & REYNAL XING
+HS 68 PM(3:10),     142,     6, 3:22 pm,     -5,CORELL RD & WILDWOOD RD
+HS 68 PM(3:10),     142,     7, 3:23 pm,     -3,BLACK BIRCH LN & SPIER RD
+HS 68 PM(3:10),     142,     8, 3:25 pm,     -6,BLACK BIRCH LN & MAGNOLIA RD
+HS 68 PM(3:10),     142,     9, 3:26 pm,      0,185 SAXON WOODS ROAD
+HS 68 PM(3:10),     142,    10, 3:27 pm,     -3,BOULDER BROOK RD & SAXON WOODS RD
+HS 68 PM(3:10),     142,    11, 3:28 pm,     -9,146 SAXON WOODS RD
+HS 68 PM(3:10),     142,    12, 3:30 pm,     -4,55 SAXON WOODS RD
+HS 68 PM(3:10),     142,    13, 3:32 pm,    -15,BANSOM RD & SPRINGDALE RD
+HS 68 PM(3:10),     142,    14, 3:34 pm,     -4,ASPEN RD & SYCAMORE RD
 HS 69 PM(3:10),     152,     2, 3:10 pm,     26,SENIOR HIGH SCHOOL (007)
-HS 69 PM(3:10),     152,     3, 3:14 pm,     -3,
-HS 69 PM(3:10),     152,     4, 3:14 pm,     -7,
-HS 69 PM(3:10),     152,     5, 3:15 pm,     -6,
-HS 69 PM(3:10),     152,     6, 3:16 pm,    -10,
+HS 69 PM(3:10),     152,     3, 3:14 pm,     -3,HEATHCOTE RD & INNES RD
+HS 69 PM(3:10),     152,     4, 3:14 pm,     -7,CARTHAGE RD & HEATHCOTE RD
+HS 69 PM(3:10),     152,     5, 3:15 pm,     -6,CROSSWAY & HEATHCOTE RD
+HS 69 PM(3:10),     152,     6, 3:16 pm,    -10,HEATHCOTE RD & STRATTON RD
 HS 70 PM(3:10),     157,     2, 3:10 pm,     61,SENIOR HIGH SCHOOL (007)
-HS 70 PM(3:10),     157,     3, 3:25 pm,     -3,
-HS 70 PM(3:10),     157,     4, 3:27 pm,     -4,
-HS 70 PM(3:10),     157,     5, 3:28 pm,     -5,
-HS 70 PM(3:10),     157,     6, 3:30 pm,      0,
-HS 70 PM(3:10),     157,     7, 3:31 pm,     -1,
-HS 70 PM(3:10),     157,     8, 3:32 pm,     -2,
-HS 70 PM(3:10),     157,     9, 3:34 pm,      0,
-HS 70 PM(3:10),     157,    10, 3:36 pm,      0,
-HS 70 PM(3:10),     157,    11, 3:37 pm,     -2,
-HS 70 PM(3:10),     157,    12, 3:40 pm,      0,
+HS 70 PM(3:10),     157,     3, 3:25 pm,     -3,CROSSWAY & FAYETT RD & FRANKLIN RD
+HS 70 PM(3:10),     157,     4, 3:27 pm,     -4,MAMARONECK RD & STRATTON RD
+HS 70 PM(3:10),     157,     5, 3:28 pm,     -5,COLONIAL RD & MAMARONECK RD
+HS 70 PM(3:10),     157,     6, 3:30 pm,      0,BARKER LN & MAMARONECK RD
+HS 70 PM(3:10),     157,     7, 3:31 pm,     -1,GRIFFEN AVE & MAMARONECK RD & OLD WHITE PLAINS RD
+HS 70 PM(3:10),     157,     8, 3:32 pm,     -2,BARNWALL LN & FAIRWAY DR
+HS 70 PM(3:10),     157,     9, 3:34 pm,      0,JENNY CLOSE & MARBOURNE DR
+HS 70 PM(3:10),     157,    10, 3:36 pm,      0,MARBOURNE DR & PRINCE WILLOW LN
+HS 70 PM(3:10),     157,    11, 3:37 pm,     -2,DORIS RD & PRINCE WILLOW LN
+HS 70 PM(3:10),     157,    12, 3:40 pm,      0,GRIFFEN AVENUE & BRITTANY CLOSE & GRIFFEN AVENUE
 HS 70 PM(3:10),     157,    13, 3:41 pm,     -1,
 HS 70 PM(3:10),     157,    14, 3:42 pm,     -7,
 HS 70 PM(3:10),     157,    15, 3:45 pm,     -1,

@@ -26,6 +26,7 @@ Here are some funny things I noticed:
     ...
     HS 28 AM,           155,    15, 7:21 am,      1,WEAVER ST & HWY 125 & CO HWY 129 & WEAVER ST & HWY 125 & CO HWY 129 & HILLANDALE DR &  HILLANDDALE DR & HILLANDALE CLOSE
     ...
+    HS 70 PM(3:10),     157,    12, 3:40 pm,      0,GRIFFEN AVENUE & BRITTANY CLOSE & GRIFFEN AVENUE
 
 ## Maps
 Here are some ideas.
