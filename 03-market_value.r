@@ -32,7 +32,10 @@ market.value.plot <- ggplot(market.value) +
   aes(x = CPIAUCSL.2012, y = value.10000) +
   aes(label = paste(year, '\n(', percent.to.market, '%)', sep = '')) +
   scale_x_continuous('Value of a dollar in 2012 dollars', labels = dollar) +
-  scale_y_continuous('Nominal market value of a house assessed at $10,000',
+  scale_y_continuous('Nominal market value of a house assessed at $10,000
+($10,000 divided by the adjustment factor in parantheses)',
     labels = dollar, limits = c(0, 700000)) +
+  labs(title = 'How is the uniform market value adjustment on Scarsdale tax bills determined?
+Well it\'s apparently not just an inflation adjustment.') +
   geom_text(y = .text.y) +
   geom_path()
