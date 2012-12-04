@@ -15,7 +15,6 @@ inflation <- data.frame(
 )
 
 # Load budget data
-funds <- read.csv('budget/appendix_a1-funds.csv')
 tax <- read.csv('budget/appendix_a1-tax.csv')
 
 # Use the adopted budget if available; otherwise, use the tentative budget.
@@ -24,7 +23,6 @@ tax <- ddply(tax, 'year', function(df){df[order(df$budget),][1,]})
 # Join
 tax <- join(tax, inflation)
 tax$tax.rate.adj.2009 <- tax$tax.rate/tax$CPIAUCSL.2009
-budget <- join(tax, funds)
 
 # Tax rate over time
 tax.by.year <- ggplot(tax) + aes(x = year, y = tax.rate) + geom_point() +
