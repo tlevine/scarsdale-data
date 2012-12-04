@@ -10,8 +10,8 @@ inflation <- data.frame(
   inflation.xts[,1]
 )
 
-funds <- read.csv('budget/appendix_a1-funds.csv')
-tax <- read.csv('budget/appendix_a1-tax.csv')
+funds <- read.csv('appendix_a1-funds.csv')
+tax <- read.csv('appendix_a1-tax.csv')
 tax <- join(tax, inflation)
 budget <- join(tax, funds)
 
@@ -33,16 +33,11 @@ tax.p3 <- tax.p1 +
 # Do another one like this but with Lange's sandwiches as the x unit.
 tax$assessed.2012 <- tax$assessed * tax$CPIAUCSL
 tax.p4 <- ggplot(tax) + aes(x = assessed.2012, y = tax.rate, label = year) + geom_text() +
-  scale_x_continuous('Total village assessment in May 2012 dollars', labels = tax$assessed.2012) + ylim(0, .3)
+  scale_x_continuous('Total village assessment in May 2012 dollars') + ylim(0, .3)
 
 
-# Tax rate over time
-tax.p6 <- ggplot(tax) + aes(x = year, y = tax.rate) + geom_point() +
-  labs(title = 'Tax rate increases steadily.')
+### Budget stuff
 
-tax.p7 <- ggplot(tax) + aes(x = CPIAUCSL, y = tax.rate, label = year) + geom_text() +
-  labs(title = 'Tax rate and inflation increase somewhat proportionately.') +
-  scale_x_continuous('Value of a dollar in May 2012 dollars', labels = tax$assessed.2012)
 
 # Combined
 ggplot(budget)
