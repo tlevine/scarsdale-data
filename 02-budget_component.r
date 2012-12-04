@@ -26,10 +26,11 @@ budget <- join(tax, funds)
 
 # Use the adopted budget if available; otherwise, use the tentative budget.
 budget <- ddply(budget, c('year', 'fund'), function(df){df[order(df$budget),][1,]})
-
-
 budget$appropriation.2012 <- budget$appropriation / budget$CPIAUCSL.2012
 
+#
+# Plot sub-fund appropriations over the years.
+#
 .melt.vars <- c(
    "year",
    "fund",
@@ -53,3 +54,17 @@ appropriations <- ggplot(.molten) +
   scale_y_continuous('Appropriation', labels = dollar) +
   labs(title = 'Village appropriations by fund over the past few years') +
   geom_line()
+
+#
+# Appropriations relative 2006-2007
+#
+.budget.rel <- sqldf("
+SELECT
+  budget.year AS 'Year',
+  budget.fund AS 'Fund',
+  budget.appropriation,
+  1.0 * budget.appropriation/budget_2006.appropriation AS 'Change in appropriation'
+FROM budget
+JOIN (SELECT * FROM budget WHERE year = '2006-2007') AS budget_2006
+WHERE budget.fund = budget_2006.fund
+") 
