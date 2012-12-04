@@ -37,8 +37,19 @@ budget$appropriation.2012 <- budget$appropriation / budget$CPIAUCSL.2012
    "CPIAUCSL.2012",
    "tax.rate.adj.2009"
 )
-.melted <- melt(budget[c(.melt.vars, 'appropriation', 'appropriation.2012')], .melt.vars)
-appropriations <- ggplot(.melted) +
-  aes(x = year, y = value, group = paste(variable, fund)) +
-  aes(lty = variable, color = fund) +
+.molten <- melt(
+  budget[c(.melt.vars, 'appropriation', 'appropriation.2012')],
+  .melt.vars, variable.name = 'Appropriation'
+)
+names(.molten)[2] <- 'Fund'
+.molten$Appropriation <- factor(.molten$Appropriation,
+  levels = c('appropriation', 'appropriation.2012')
+)
+levels(.molten$Appropriation) <- c('Raw amount', 'In 2012 dollars')
+appropriations <- ggplot(.molten) +
+  aes(x = year, y = value, group = paste(Appropriation, Fund)) +
+  aes(lty = Appropriation, color = Fund) +
+  scale_x_discrete('Year') +
+  scale_y_continuous('Appropriation', labels = dollar) +
+  labs(title = 'Village appropriations by fund over the past few years') +
   geom_line()
