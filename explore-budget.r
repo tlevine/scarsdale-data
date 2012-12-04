@@ -10,8 +10,8 @@ inflation <- data.frame(
   inflation.xts[,1]
 )
 
-funds <- read.csv('appendix_a1-funds.csv')
-tax <- read.csv('appendix_a1-tax.csv')
+funds <- read.csv('budget/appendix_a1-funds.csv')
+tax <- read.csv('budget/appendix_a1-tax.csv')
 tax <- join(tax, inflation)
 budget <- join(tax, funds)
 
