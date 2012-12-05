@@ -37,6 +37,11 @@ validate.trip <- function(trip){
   )
 
   expect_equal(
+    trip$stop.id, sort(trip$stop.id),
+    info = paste(r, 'The bus stops are not sorted by stop id.')
+  )
+
+  expect_equal(
     trip$time, sort(trip$time),
     info = paste(r, 'The bus stops are not sorted by time.')
   )
