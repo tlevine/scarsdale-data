@@ -1,5 +1,7 @@
 #!/usr/bin/Rscript --vanilla
 library(testthat)
+library(plyr)
+library(sqldf)
 
 stops <- read.csv('busstops.csv')
 
@@ -24,25 +26,30 @@ compare.trips <- function(a, b){
 }
 
 validate.trip <- function(trip){
-
+  r <- paste(as.character(trip[1,'route.name']), ':', sep = '')
   expect_equal(sum(trip$n.students), 0,
-    info = 'n.students does not sum to zero.'
+    info = paste(r, 'n.students does not sum to zero.')
   )
 
   expect_true(
     'SENIOR HIGH SCHOOL (007)' %in% trip[c(1, nrow(trip)),'location'],
-    info = 'The high school is listed neither as the first nor the last stop.'
+    info = paste(r, 'The high school is listed neither as the first nor the last stop.')
+  )
+
+  expect_equal(
+    trip$time, sort(trip$time),
+    info = paste(r, 'The bus stops are not sorted by time.')
   )
 
 }
 
-.c <- c('n.students', 'location')
-a <- subset(stops, route.number == 142 & route.name == 'HS 68 PM(3:10)')[.c]
-b <- subset(stops, route.number == 142 & route.name == 'HS 31 AM')[.c]
+a <- subset(stops, route.number == 142 & route.name == 'HS 68 PM(3:10)')
+b <- subset(stops, route.number == 142 & route.name == 'HS 31 AM')
 
 sqldf('select route_name, route_number, sum(abs(n_students)) from stops group by route_name, route_number order by 3')
 
-library(sqldf)
+# Check individual trips.
+d_ply(stops, 'route.name', validate.trip)
 
 # "","route.name","route.number"
 # "HS 74 PM(4:15)",95
