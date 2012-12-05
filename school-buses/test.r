@@ -1,0 +1,70 @@
+#!/usr/bin/Rscript --vanilla
+library(testthat)
+
+stops <- read.csv('busstops.csv')
+
+compare.trips <- function(a, b){
+  # Compare a set of morning and afternoon trips.
+
+  expect_equal(
+    nrow(a), nrow(b),
+    info = 'The two trips have different number of stops.'
+  )
+
+  expect_equal(
+    a$n.students, -rev(b$n.students),
+    info = 'The student counts are different.'
+  )
+
+  expect_equal(
+    a$location, rev(b$location),
+    info = 'The stop locations are different.'
+  )
+
+}
+
+validate.trip <- function(trip){
+
+  expect_equal(sum(trip$n.students), 0,
+    info = 'n.students does not sum to zero.'
+  )
+
+  expect_true(
+    'SENIOR HIGH SCHOOL (007)' %in% trip[c(1, nrow(trip)),'location'],
+    info = 'The high school is listed neither as the first nor the last stop.'
+  )
+
+}
+
+.c <- c('n.students', 'location')
+a <- subset(stops, route.number == 142 & route.name == 'HS 68 PM(3:10)')[.c]
+b <- subset(stops, route.number == 142 & route.name == 'HS 31 AM')[.c]
+
+sqldf('select route_name, route_number, sum(abs(n_students)) from stops group by route_name, route_number order by 3')
+
+library(sqldf)
+
+# "","route.name","route.number"
+# "HS 74 PM(4:15)",95
+# "HS 31 AM",142
+# "HS 68 PM(3:10)",142
+# "HS 24 AM",144
+# "HS 57 PM",144
+# "HS 66 PM(3:10)",144
+# "HS 22 AM",145
+# "HS 59 PM",145
+# "HS 26 AM",147
+# "HS 29 AM",148
+# "HS 62 PM",148
+# "HS 27 AM",149
+# "HS 23 AM",150
+# "HS 69 PM(3:10)",152
+# "HS 58 PM",154
+# "HS 28 AM",155
+# "HS 60 PM",155
+# "HS 30 AM",156
+# "HS 63 PM",156
+# "HS 64/72 PM(3:10)",156
+# "HS 25 AM",157
+# "HS 61 PM",157
+# "HS 70 PM(3:10)",157
