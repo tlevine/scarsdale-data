@@ -51,4 +51,4 @@ p <- function() {
   print(adj.tax.by.inflation)
   dev.off()
 }
-p()
+#p()
