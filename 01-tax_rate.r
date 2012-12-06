@@ -37,12 +37,14 @@ tax.by.inflation <- ggplot(tax) + aes(x = CPIAUCSL.2012, y = tax.rate, label = y
   scale_y_continuous('Village tax rate (percent of assessed value)', labels = percent)
 
 # Inflation-adjusted tax rate by value of a dollar
-adj.tax.by.inflation <- ggplot(melt(tax, c('year', 'budget', 'CPIAUCSL.2009', 'CPIAUCSL.2012', 'assessed'))) +
-  aes(x = year, y = value, group = variable, label = year, linetype = variable) +
-  labs(title = 'Does village tax rate increase faster than inflation?\n(If it does, the dotted line should be flat.)') +
+tax.molten <- melt(tax, c('year', 'budget', 'CPIAUCSL.2009', 'CPIAUCSL.2012', 'assessed'))
+levels(tax.molten$variable) <- c('Raw', 'Adjusted (using 2009 dollars)')
+adj.tax.by.inflation <- ggplot(tax.molten) +
+  aes(x = year, y = value, group = variable, linetype = variable) +
+  labs(title = 'Does village tax rate increase faster than inflation?\n(If it does not, the dotted line should be flat.)') +
   scale_x_discrete('Year') +
   scale_y_continuous('Inflation-adjusted village tax rate (percent of assessed value)', labels = percent) +
-  geom_text() + geom_line()
+  geom_line()
 
 p <- function() {
   pdf('plots/01-tax_rate.pdf', width = 11, height = 8.5)
