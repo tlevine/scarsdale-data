@@ -52,7 +52,7 @@ geocode <- function(query) {
   }
 }                
 
-main <- function(){
+do.geocode <- function(){
   stops <- read.csv('bus_stops.csv')
 
   # Add an identifier row.
@@ -74,4 +74,13 @@ main <- function(){
   stops$id <- NULL
 
   write.csv(stops, file = 'bus_stops-geocoded.csv', row.names = F)
+
+  stops
+}
+
+do.plot <- function() {
+  stops <- read.csv('bus_stops-geocoded.csv', stringsAsFactors = T)
+  stops$direction <- factor(grepl('am', stops$time), levels = c(T, F))
+  levels(stops$direction) <- c('am', 'pm')
+# ggplot(stops) + aes(x = lng, y = lat, group = route.name, color = direction) + geom_path() 
 }
