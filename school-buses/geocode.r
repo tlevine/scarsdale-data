@@ -94,6 +94,7 @@ do.plot <- function() {
     aes(x = lng, y = lat, group = route.name, label = location, size = abs(n.students), color = n.students > 0) +
     geom_line(size = .3, color = 1) + geom_point()                   
 
+
   
   morning <- ggplot(subset(stops, direction == 'am')) +
     aes(x = lng, y = lat, group = route.name, color = route.name, label = location) +
@@ -102,4 +103,9 @@ do.plot <- function() {
   afternoon <- ggplot(subset(stops, direction == 'pm')) +
     aes(x = lng, y = lat, group = route.name, color = route.name, label = location) +
     geom_text() + geom_path()
+
+  morning.sized <- ggplot(subset(stops, direction == 'am')) +
+    aes(x = lng, y = lat, group = route.name, color = route.name, label = location, size = cumsum(n.students)) +
+    geom_path(lineend = 'round') + geom_text()
+
 }
