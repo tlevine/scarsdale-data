@@ -106,6 +106,7 @@ do.plot <- function() {
 
   morning.sized <- ggplot(subset(stops, direction == 'am')) +
     aes(x = lng, y = lat, group = route.name, color = route.name, label = location, size = cumsum(n.students)) +
-    geom_path(lineend = 'round') + geom_text()
+    geom_path(lineend = 'round') + geom_text() +
+    labs(title = 'Morning Scarsdale High School bus routes\nSize of the line indicates the number of students on the bus.')
 
 }
