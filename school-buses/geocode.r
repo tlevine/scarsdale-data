@@ -83,4 +83,23 @@ do.plot <- function() {
   stops$direction <- factor(grepl('am', stops$time), levels = c(T, F))
   levels(stops$direction) <- c('am', 'pm')
 # ggplot(stops) + aes(x = lng, y = lat, group = route.name, color = direction) + geom_path() 
+
+  # The different directions overlap. That's a problem.
+  my.bus <- ggplot(subset(stops, route.name %in% c('HS 23 AM', 'HS 58 PM'))) +
+    aes(x = lng, y = lat, group = route.name, color = direction, label = location) +
+    geom_text() + geom_path()
+
+  my.bus.afternoon.df <- subset(stops, route.name == 'HS 58 PM')
+  ggplot(my.bus.afternoon.df) +
+    aes(x = lng, y = lat, group = route.name, label = location, size = abs(n.students), color = n.students > 0) +
+    geom_line(size = .3, color = 1) + geom_point()                   
+
+  
+  morning <- ggplot(subset(stops, direction == 'am')) +
+    aes(x = lng, y = lat, group = route.name, color = route.name, label = location) +
+    geom_text() + geom_path()
+
+  afternoon <- ggplot(subset(stops, direction == 'pm')) +
+    aes(x = lng, y = lat, group = route.name, color = route.name, label = location) +
+    geom_text() + geom_path()
 }
