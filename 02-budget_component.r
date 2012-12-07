@@ -69,7 +69,7 @@ JOIN (SELECT * FROM budget WHERE year = '2006-2007') AS budget_2006
 WHERE budget.fund = budget_2006.fund
 ") 
 appropriation.changes <- ggplot(.budget.rel) +
-  aes(x = Year, y = Change.in.appropriation, group = Fund, color = Fund) +
+  aes(x = Year, y = Change.in.appropriation, group = Fund, color = Fund, size = budget.appropriation) +
   scale_y_continuous('Change in appropriation (relative 2006-2007)', labels = percent) +
   labs(title = 'Change in village fund appropriations since 2006') +
   geom_line()
