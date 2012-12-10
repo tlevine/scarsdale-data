@@ -17,25 +17,25 @@ year,     capital_project,              figure
 2006-2007,public_safety,estimated,      
 2007-2008,popham road bridge,adopted,   
 2007-2008,public_safety,adopted,        
-2007-2008,popham road bridge,estimated, 
+2007-2008,popham road bridge,estimated, 0 + 0 + 0 + 0 + 0
 2007-2008,public_safety,estimated,      45210 + 0 + 0 + 1000000
-2008-2009,popham road bridge,adopted,   0 + 0 + 0 + 0 + 0
+2008-2009,popham road bridge,adopted,   157000 + 47000 + 186000 + 449000 + 8536000
 2008-2009,public_safety,adopted,        112000 + 12000000 + 30000 + 18760
-2008-2009,popham road bridge,estimated, 157000 + 47000 + 186000 + 449000 + 8536000
-2008-2009,public_safety,estimated,      
-2009-2010,popham road bridge,adopted,   
-2009-2010,public_safety,adopted,        
-2009-2010,popham road bridge,estimated, 
-2009-2010,public_safety,estimated,      
-2010-2011,popham road bridge,adopted,   
-2010-2011,public_safety,adopted,        
-2010-2011,popham road bridge,estimated, 
-2010-2011,public_safety,estimated,      
-2011-2012,popham road bridge,adopted,   
-2011-2012,public_safety,adopted,        
-2011-2012,popham road bridge,estimated, 
-2011-2012,public_safety,estimated,      
-2012-2013,popham road bridge,adopted,   
-2012-2013,public_safety,adopted,        
+2008-2009,popham road bridge,estimated, 2100000 + 157000 + 0 + 0 + 243625 + 0 + 0 + 9264000 + 321000 + 806000
+2008-2009,public_safety,estimated,      0 + 0 + 11500000 + 0
+2009-2010,popham road bridge,adopted,   NA
+2009-2010,public_safety,adopted,        150000 + 22000 + 30000 + 300000
+2009-2010,popham road bridge,estimated, 9264000 + 2100000 + 806000 + 2675260 + 140800 + 398320 + 509515
+2009-2010,public_safety,estimated,      24925 + 0 + 13471 + 18750 + 0
+2010-2011,popham road bridge,adopted,   NA
+2010-2011,public_safety,adopted,        190000 + 1900000 + 106250
+2010-2011,popham road bridge,estimated, 1206683 + 1528908 + 789450 + 41550 + 1900000 + 556117
+2010-2011,public_safety,estimated,      0 + 0 + 29566 + 98240 + 142873 + 1000000 + 106250
+2011-2012,popham road bridge,adopted,   NA
+2011-2012,public_safety,adopted,        190000 + 0 + 193750
+2011-2012,popham road bridge,estimated, 1206683 + 1609378 + 959072 + 1361184 + 750078
+2011-2012,public_safety,estimated,      0 + 115000 + 0
+2012-2013,popham road bridge,adopted,   NA
+2012-2013,public_safety,adopted,        240000 + 0 + 193750
 2012-2013,popham road bridge,estimated, 
 2012-2013,public_safety,estimated,      
