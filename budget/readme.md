@@ -76,10 +76,9 @@ It has these columns.
 
     year,capital_project,figure
 
-`figure` is one of "adopted", "estimated" and "acctual". If we are discussing
+`figure` is one of "adopted" and "estimated". If we are discussing
 the appropriations for 2008--2009, the "adopted" is from the 2008-2009 budget
-document, the "estimated" is from the 2009--2010 budget document and the
-"actual" is from the 2010--2011 budget document.
+document, and the "estimated" is from the 2009--2010 budget document.
 
 All of these come from the capital projects fund budget table. For example,
 this is around page 113 for the 2008--2009 budget. They are the sum of each
