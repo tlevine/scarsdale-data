@@ -1,51 +1,61 @@
-year,capital_project,figure
-2003-2004,popham road bridge,adopted
-2003-2004,public_safety,adopted
-2003-2004,popham road bridge,estimated
-2003-2004,public_safety,estimated
-2003-2004,popham road bridge,actual
-2003-2004,public_safety,actual
-2004-2005,popham road bridge,adopted
-2004-2005,public_safety,adopted
-2004-2005,popham road bridge,estimated
-2004-2005,public_safety,estimated
-2004-2005,popham road bridge,actual
-2004-2005,public_safety,actual
-2005-2006,popham road bridge,adopted
-2005-2006,public_safety,adopted
-2005-2006,popham road bridge,estimated
-2005-2006,public_safety,estimated
-2005-2006,popham road bridge,actual
-2005-2006,public_safety,actual
-2006-2007,popham road bridge,adopted
-2006-2007,public_safety,adopted
-2006-2007,popham road bridge,estimated
-2006-2007,public_safety,estimated
-2006-2007,popham road bridge,actual
-2006-2007,public_safety,actual
-2007-2008,popham road bridge,adopted
-2007-2008,public_safety,adopted
-2007-2008,popham road bridge,estimated
-2007-2008,public_safety,estimated
-2007-2008,popham road bridge,actual
-2007-2008,public_safety,actual
-2008-2009,popham road bridge,adopted
-2008-2009,public_safety,adopted
-2008-2009,popham road bridge,estimated
-2008-2009,public_safety,estimated
-2008-2009,popham road bridge,actual
-2008-2009,public_safety,actual
-
-2009-2010,popham road bridge,adopted
-2009-2010,public_safety,adopted
-2009-2010,popham road bridge,estimated
-2009-2010,public_safety,estimated
-2009-2010,popham road bridge,actual
-2009-2010,public_safety,actual
-
-2010-2011,popham road bridge,adopted
-2010-2011,public_safety,adopted
-2010-2011,popham road bridge,estimated
-2010-2011,public_safety,estimated
-2010-2011,popham road bridge,actual
-2010-2011,public_safety,actual
+year,     capital_project,              figure
+2003-2004,popham road bridge,adopted,   
+2003-2004,public_safety,adopted,        
+2003-2004,popham road bridge,estimated, 
+2003-2004,public_safety,estimated,      
+2003-2004,popham road bridge,actual,    
+2003-2004,public_safety,actual,         
+2004-2005,popham road bridge,adopted,   
+2004-2005,public_safety,adopted,        
+2004-2005,popham road bridge,estimated, 
+2004-2005,public_safety,estimated,      
+2004-2005,popham road bridge,actual,    
+2004-2005,public_safety,actual,         
+2005-2006,popham road bridge,adopted,   
+2005-2006,public_safety,adopted,        
+2005-2006,popham road bridge,estimated, 
+2005-2006,public_safety,estimated,      
+2005-2006,popham road bridge,actual,    
+2005-2006,public_safety,actual,         
+2006-2007,popham road bridge,adopted,   
+2006-2007,public_safety,adopted,        
+2006-2007,popham road bridge,estimated, 
+2006-2007,public_safety,estimated,      
+2006-2007,popham road bridge,actual,    
+2006-2007,public_safety,actual,         
+2007-2008,popham road bridge,adopted,   
+2007-2008,public_safety,adopted,        
+2007-2008,popham road bridge,estimated, 
+2007-2008,public_safety,estimated,      
+2007-2008,popham road bridge,actual,    
+2007-2008,public_safety,actual,         
+2008-2009,popham road bridge,adopted,   
+2008-2009,public_safety,adopted,        
+2008-2009,popham road bridge,estimated, 
+2008-2009,public_safety,estimated,      
+2008-2009,popham road bridge,actual,    
+2008-2009,public_safety,actual,         
+2009-2010,popham road bridge,adopted,   
+2009-2010,public_safety,adopted,        
+2009-2010,popham road bridge,estimated, 
+2009-2010,public_safety,estimated,      
+2009-2010,popham road bridge,actual,    
+2009-2010,public_safety,actual,         
+2010-2011,popham road bridge,adopted,   
+2010-2011,public_safety,adopted,        
+2010-2011,popham road bridge,estimated, 
+2010-2011,public_safety,estimated,      
+2010-2011,popham road bridge,actual,    
+2010-2011,public_safety,actual,         
+2011-2012,popham road bridge,adopted,   
+2011-2012,public_safety,adopted,        
+2011-2012,popham road bridge,estimated, 
+2011-2012,public_safety,estimated,      
+2011-2012,popham road bridge,actual,    
+2011-2012,public_safety,actual,         
+2012-2013,popham road bridge,adopted,   
+2012-2013,public_safety,adopted,        
+2012-2013,popham road bridge,estimated, 
+2012-2013,public_safety,estimated,      
+2012-2013,popham road bridge,actual,    
+2012-2013,public_safety,actual,         
