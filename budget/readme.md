@@ -71,6 +71,15 @@ Let's start with adopted versus estimated for just the sum of the Popham Road
 Bridge and Public Safety Headquarters projects. After that, do this for more
 things.
 
+It has these columns.
+
+    year,cost_center,figure
+
+`figure` is one of "adopted", "estimated" and "acctual". If we are discussing
+the appropriations for 2008--2009, the "adopted" is from the 2008-2009 budget
+document, the "estimated" is from the 2009--2010 budget document and the
+"actual" is from the 2010--2011 budget document.
+
 ## Call the Treasurer
 Call the Treasurer at (914) 722-1170. The person who answers the phone doesn't
 know about the preparation of these documents, so she transferred me to the
