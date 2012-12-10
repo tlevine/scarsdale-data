@@ -62,6 +62,15 @@ Revenue".
 Finally, it contains the balance from the previous year (`balance`, originally
 "Approp Fund Balance").
 
+### Adopted versus Estimated
+A budget is adopted at the beginning of the fiscal year, then money is spent,
+then the actual appropriations are estimated. In the next year's budget, the
+adopted and estimated appropriations are compared.
+
+Let's start with adopted versus estimated for just the sum of the Popham Road
+Bridge and Public Safety Headquarters projects. After that, do this for more
+things.
+
 ## Call the Treasurer
 Call the Treasurer at (914) 722-1170. The person who answers the phone doesn't
 know about the preparation of these documents, so she transferred me to the
