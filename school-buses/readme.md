@@ -45,6 +45,9 @@ Here are some funny things I noticed:
 
 Also, several other rows have "location[s]" at three-street intersections.
 
+## Geocoding
+[This script](https://raw.github.com/gist/3834498/bc34457d67a5639af8bc9fab6093644c3eec4b65/gistfile1.rebol) was helpful.
+
 ## Maps
 Here are some ideas.
 
@@ -57,3 +60,4 @@ Here are some ideas.
 1. Enter the locations.
 2. Make maps.
 3. Ask for middle school schedules.
+
