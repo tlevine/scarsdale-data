@@ -67,6 +67,7 @@ A budget is adopted at the beginning of the fiscal year, then money is spent,
 then the actual appropriations are estimated. In the next year's budget, the
 adopted and estimated appropriations are compared.
 
+#### Specific costs
 Let's start with adopted versus estimated for just the sum of the Popham Road
 Bridge and Public Safety Headquarters projects. After that, do this for more
 things.
@@ -79,6 +80,9 @@ It has these columns.
 the appropriations for 2008--2009, the "adopted" is from the 2008-2009 budget
 document, the "estimated" is from the 2009--2010 budget document and the
 "actual" is from the 2010--2011 budget document.
+
+All of these come from the capital projects fund budget table. For example,
+this is around page 113 for the 2008--2009 budget.
 
 ## Call the Treasurer
 Call the Treasurer at (914) 722-1170. The person who answers the phone doesn't
