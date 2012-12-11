@@ -1,41 +1,41 @@
-year,     capital_project,              figure
+year,     capital_project,   figure,    amount
 2003-2004,popham road bridge,adopted,   
-2003-2004,public_safety,adopted,        
+2003-2004,public_safety,     adopted,   
 2003-2004,popham road bridge,estimated, 
-2003-2004,public_safety,estimated,      
+2003-2004,public_safety,     estimated, 
 2004-2005,popham road bridge,adopted,   
-2004-2005,public_safety,adopted,        
+2004-2005,public_safety,     adopted,   
 2004-2005,popham road bridge,estimated, 
-2004-2005,public_safety,estimated,      
+2004-2005,public_safety,     estimated, 
 2005-2006,popham road bridge,adopted,   
-2005-2006,public_safety,adopted,        
+2005-2006,public_safety,     adopted,   
 2005-2006,popham road bridge,estimated, 0 + 2625 + 49863 + 0 + 0 + 0 + 0 + 0 + 0
-2005-2006,public_safety,estimated,      10000 + 0 + 440000 + 0 + 84000
+2005-2006,public_safety,     estimated, 10000 + 0 + 440000 + 0 + 84000
 2006-2007,popham road bridge,requested, 94000 + 1781000 + 96000 + 36000 + 6823000 + 40000 + 156000 + 38000 + 717000
-2006-2007,public_safety,requested,      5490000
+2006-2007,public_safety,     requested, 5490000
 2006-2007,popham road bridge,estimated, 105000 + 1995000 + 11800 + 224200 + 0 + 0 + 0 + 0 + 0 + 38000 + 717000
-2006-2007,public_safety,estimated,      390000 + 107000 + 445000
+2006-2007,public_safety,     estimated, 390000 + 107000 + 445000
 2007-2008,popham road bridge,adopted,   98000 + 40000 + 156000 + 360000 + 6823000
-2007-2008,public_safety,adopted,        50000 + 30000 + 11000000
+2007-2008,public_safety,     adopted,   50000 + 30000 + 11000000
 2007-2008,popham road bridge,estimated, 0 + 0 + 0 + 0 + 0
-2007-2008,public_safety,estimated,      45210 + 0 + 0 + 1000000
+2007-2008,public_safety,     estimated, 45210 + 0 + 0 + 1000000
 2008-2009,popham road bridge,adopted,   157000 + 47000 + 186000 + 449000 + 8536000
-2008-2009,public_safety,adopted,        112000 + 12000000 + 30000 + 18760
+2008-2009,public_safety,     adopted,   112000 + 12000000 + 30000 + 18760
 2008-2009,popham road bridge,estimated, 2100000 + 157000 + 0 + 0 + 243625 + 0 + 0 + 9264000 + 321000 + 806000
-2008-2009,public_safety,estimated,      0 + 0 + 11500000 + 0
+2008-2009,public_safety,     estimated, 0 + 0 + 11500000 + 0
 2009-2010,popham road bridge,adopted,   NA
-2009-2010,public_safety,adopted,        150000 + 22000 + 30000 + 300000
+2009-2010,public_safety,     adopted,   150000 + 22000 + 30000 + 300000
 2009-2010,popham road bridge,estimated, 9264000 + 2100000 + 806000 + 2675260 + 140800 + 398320 + 509515
-2009-2010,public_safety,estimated,      24925 + 0 + 13471 + 18750 + 0
+2009-2010,public_safety,     estimated, 24925 + 0 + 13471 + 18750 + 0
 2010-2011,popham road bridge,adopted,   NA
-2010-2011,public_safety,adopted,        190000 + 1900000 + 106250
+2010-2011,public_safety,     adopted,   190000 + 1900000 + 106250
 2010-2011,popham road bridge,estimated, 1206683 + 1528908 + 789450 + 41550 + 1900000 + 556117
-2010-2011,public_safety,estimated,      0 + 0 + 29566 + 98240 + 142873 + 1000000 + 106250
+2010-2011,public_safety,     estimated, 0 + 0 + 29566 + 98240 + 142873 + 1000000 + 106250
 2011-2012,popham road bridge,adopted,   NA
-2011-2012,public_safety,adopted,        190000 + 0 + 193750
+2011-2012,public_safety,     adopted,   190000 + 0 + 193750
 2011-2012,popham road bridge,estimated, 1206683 + 1609378 + 959072 + 1361184 + 750078
-2011-2012,public_safety,estimated,      0 + 115000 + 0
+2011-2012,public_safety,     estimated, 0 + 115000 + 0
 2012-2013,popham road bridge,adopted,   NA
-2012-2013,public_safety,adopted,        240000 + 0 + 193750
+2012-2013,public_safety,     adopted,   240000 + 0 + 193750
 2012-2013,popham road bridge,estimated, 
-2012-2013,public_safety,estimated,      
+2012-2013,public_safety,     estimated,      
