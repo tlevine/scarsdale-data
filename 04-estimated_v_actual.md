@@ -5,3 +5,5 @@ up not receiving the grant and not taking out the bond.
 
 See page 110 of the 2006-2007 budget.108 of the 2008-2009 budget, 111 of the
 2009-2010 budget.
+
+`04-amount_v_estimated-sum.sh` converts my manual input to a sum by row.
