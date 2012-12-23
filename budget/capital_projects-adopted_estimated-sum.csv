@@ -1,12 +1,4 @@
 year,     capital_project,   figure,    amount	,amount_sum
-2003-2004,popham road bridge,adopted,   	,0
-2003-2004,public_safety,     adopted,   	,0
-2003-2004,popham road bridge,estimated, 	,0
-2003-2004,public_safety,     estimated, 	,0
-2004-2005,popham road bridge,adopted,   	,0
-2004-2005,public_safety,     adopted,   	,0
-2004-2005,popham road bridge,estimated, 	,0
-2004-2005,public_safety,     estimated, 	,0
 2005-2006,popham road bridge,adopted,   94000 + 1781000 + 0 + 0 + 96000 + 351000 + 6832000 + 176000 + 57000 + 1068000	,10455000
 2005-2006,public_safety,     adopted,   475000 + 0 + 5490000	,5965000
 2005-2006,popham road bridge,estimated, 0 + 2625 + 49863 + 0 + 0 + 0 + 0 + 0 + 0	,52488
@@ -37,5 +29,5 @@ year,     capital_project,   figure,    amount	,amount_sum
 2011-2012,public_safety,     estimated, 0 + 115000 + 0	,115000
 2012-2013,popham road bridge,adopted,   NA	,0
 2012-2013,public_safety,     adopted,   240000 + 0 + 193750	,433750
-2012-2013,popham road bridge,estimated, 	,0
-2012-2013,public_safety,     estimated,      	,0
+2012-2013,popham road bridge,estimated, NA	,0
+2012-2013,public_safety,     estimated, NA	,0
