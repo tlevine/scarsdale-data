@@ -1,3 +1,4 @@
+#!/usr/bin/env Rscript
 library(ggplot2)
 library(reshape2)
 library(scales)
@@ -45,4 +46,4 @@ p <- function() {
   print(p.difference)
   dev.off()
 }
-
+p()
