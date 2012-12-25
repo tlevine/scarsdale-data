@@ -16,5 +16,5 @@ parse snip = (tax, assessed)
     assessed = read (replace "," "" (last components)) :: Int
 
 main = do
-  line <- getLine
-  putStrLn $ show $ fmap parse $ retrieve line
+  contents <- getContents
+  putStrLn $ show $ fmap parse $ retrieve $ replace "\n" " " contents

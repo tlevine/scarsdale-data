@@ -4,4 +4,5 @@ import re
 
 SNIP = re.compile(r"(COUNTY|VILLAGE|SCHOOL) TAXABLE ([0-9,]+)")
 snips = re.findall(SNIP, sys.stdin.read().replace('\n', ' '))
-print [(tax, int(assessed.replace(',', ''))) for tax, assessed in snips]
+for tax, assessed in snips:
+    print('%s,%d' % tax, int(assessed.replace(',', '')))
