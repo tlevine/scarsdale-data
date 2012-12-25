@@ -17,15 +17,14 @@
 <div id="input-basic">
     <label for="assessed-taxable-value">Assessed taxable value</label>
     <input name="assessed-taxable-value" type="range" min="0" max="1000000" value="25" step="1000" />
-    <button id="calculate">Go</button>
 </div>
 <div id="input-advanced">
     <label for="assessed-total-value">Assessed total value</label>
     <input name="assessed-total-value" type="text" />
     <label for="assessed-taxable-value">Assessed taxable value</label>
     <input name="assessed-taxable-value" type="text" />
-    <button id="calculate">Go</button>
 </div>
+<button id="calculate">Go</button>
 <table>
     <thead>
         <tr>
@@ -74,4 +73,8 @@
         </tr>
     </thead>
 </table>
-
+<ul id="distribution">
+    <li>Your assessed total value in the <%= total %>th percentile of assessed total values.</li>
+    <li>Your assessed taxable value for school taxes is in the <%= taxable %>th percentile.</li>
+    <li>&amp;c.</li>
+</ul>
