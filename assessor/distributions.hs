@@ -17,5 +17,4 @@ parse snip = (tax, assessed)
 
 main = do
   line <- getLine
-  putStrLn $ show $ retrieve line
   putStrLn $ show $ fmap parse $ retrieve line
