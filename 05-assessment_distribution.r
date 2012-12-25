@@ -25,9 +25,9 @@ assess.cast <- ddply(assess, 'PARCEL', function(df){data.frame(
   sd = sd(df$ASSESSED),
   label = paste(df$ASSESSED, collapse = '; ')
 )})
-mu <- mean(assess.cast$mean)
 p.variation <- ggplot(subset(assess.cast, sd > 0)) +
-  scale_x_continuous('Mean tax amount', labels = dollar) +
-  scale_y_continuous('Standard deviation of tax amount', labels = dollar) +
+  scale_x_log10('Mean tax amount', labels = dollar) +
+  scale_y_log10('Standard deviation of tax amount', labels = dollar) +
+  labs(title = 'Which parcels have a different assessment for county, village or school taxes?') +
   aes(x = mean, y = sd, label = label) +
   geom_text()
