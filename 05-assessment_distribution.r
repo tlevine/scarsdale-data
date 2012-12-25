@@ -42,7 +42,15 @@ p.variation.explore <- p.variation.base + aes(label = label) + geom_text()
 p.variation.present <- p.variation.base + geom_point() +
   annotate('text', 300000, 12000, label = 'Chateaux and\n50 Popham Road\n(apartments)')
 
-assess.cast$school.diff <- assess.cast$mean - assess.cast$school
+assess.cast$school.diff <- assess.cast$school - assess.cast$mean
 p.school <- ggplot(assess.cast) +
-  scale_x_log10('Difference between mean assessment and school tax assessment\n(If the school assessment was lower, this number is negative.)', labels = dollar) +
+  scale_x_continuous('Difference between mean assessment and school tax assessment\n(If the school assessment was lower, this number is negative.)', labels = dollar) +
   aes(x = school.diff) + geom_histogram()
+
+
+assess.cast$school.diff.normalized <- (assess.cast$school - assess.cast$mean) / assess.cast$mean
+p.school.normalized <- ggplot(assess.cast) +
+  scale_x_continuous('Normalized difference between mean assessment and school tax assessment\n(If the school assessment was lower, this number is negative.)', labels = percent) +
+  aes(x = school.diff.normalized) + stat_bin(breaks = seq(-.975, .975, .05)) +
+  labs(title = 'Assessed values for school taxes tend to be slightly lower than for other taxes.') +
+  geom_histogram()
