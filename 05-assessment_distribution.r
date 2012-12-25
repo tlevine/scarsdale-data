@@ -54,3 +54,14 @@ p.school.normalized <- ggplot(assess.cast) +
   aes(x = school.diff.normalized) + stat_bin(breaks = seq(-.975, .975, .05)) +
   labs(title = 'Assessed values for school taxes tend to be slightly lower than for other taxes.') +
   geom_histogram()
+
+p <- function() {
+  print(paste(sum(assess.cast$mean == 0), 'of', nrow(assess.cast), 'properties are effectively assessed at $0 and thus pay no taxes.'))
+  png('plots/05-apartments.png', width = 800, height = 500)
+  print(p.variation.present)
+  dev.off()
+  png('plots/05-school.png', width = 800, height = 500)
+  print(p.school)
+  dev.off()
+}
+#p()
