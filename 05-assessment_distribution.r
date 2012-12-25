@@ -25,9 +25,13 @@ assess.cast <- ddply(assess, 'PARCEL', function(df){data.frame(
   sd = sd(df$ASSESSED),
   label = paste(df$ASSESSED, collapse = '; ')
 )})
-p.variation <- ggplot(subset(assess.cast, sd > 0)) +
+
+p.variation.base <- ggplot(subset(assess.cast, sd > 0)) +
   scale_x_log10('Mean tax amount', labels = dollar) +
   scale_y_log10('Standard deviation of tax amount', labels = dollar) +
   labs(title = 'Which parcels have a different assessment for county, village or school taxes?') +
-  aes(x = mean, y = sd, label = label) +
-  geom_text()
+  aes(x = mean, y = sd)
+  
+p.variation.explore <- p.variation.base + aes(label = label) + geom_text()
+p.variation.present <- p.variation.base + geom_point() +
+  geom_text(100000, 15000, 'Chateaux and\n50 Popham Road\n(apartments)')
