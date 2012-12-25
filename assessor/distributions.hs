@@ -6,15 +6,16 @@ import Data.List.Split
 import Data.String.Utils
 
 retrieve :: String -> [String]
-retrieve = getAllTextMatches $ line =~ "(COUNTY|VILLAGE|SCHOOL) TAXABLE ([0-9,]+)" :: [String]
+retrieve line = getAllTextMatches $ line =~ "(COUNTY|VILLAGE|SCHOOL) TAXABLE ([0-9,]+)" :: [String]
 
 parse :: String -> (String, Int)
 parse snip = (tax, assessed)
   where
     components = splitOn " TAXABLE " snip
-    tax = read (head component) :: String
-    assessed = read (last (replace "," " " component)) :: Int
+    tax = head components
+    assessed = read (replace "," "" (last components)) :: Int
 
 main = do
   line <- getLine
+  putStrLn $ show $ retrieve line
   putStrLn $ show $ fmap parse $ retrieve line
