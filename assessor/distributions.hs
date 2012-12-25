@@ -2,12 +2,19 @@
 -- fields would be more work, so don't worry about them for now.
 
 import Text.Regex.Posix
+import Data.List.Split
+import Data.String.Utils
 
---line = "COUNTY TAXABLE 19,800 48 WALWORTH AVE. ACREAGE 0.55 VILLAGE TAXABLE 19,800"
+retrieve :: String -> [String]
+retrieve = getAllTextMatches $ line =~ "(COUNTY|VILLAGE|SCHOOL) TAXABLE ([0-9,]+)" :: [String]
 
-taxable :: String -> [String]
-taxable line = getAllTextMatches $ line =~ "(COUNTY|VILLAGE|SCHOOL) TAXABLE ([0-9,]+)" :: [String]
+parse :: String -> (String, Int)
+parse snip = (tax, assessed)
+  where
+    components = splitOn " TAXABLE " snip
+    tax = read (head component) :: String
+    assessed = read (last (replace "," " " component)) :: Int
 
 main = do
   line <- getLine
-  putStrLn $ show $ taxable line
+  putStrLn $ show $ fmap parse $ retrieve line
