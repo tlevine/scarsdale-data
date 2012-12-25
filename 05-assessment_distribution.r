@@ -20,11 +20,17 @@ p.distributions <- aaply(levels(assess$TAX), 1, function(tax){
     geom_histogram(position = 'dodge')
 })
 
-assess.cast <- ddply(assess, 'PARCEL', function(df){data.frame(
-  mean = mean(df$ASSESSED),
-  sd = sd(df$ASSESSED),
-  label = paste(df$ASSESSED, collapse = '; ')
-)})
+assess.cast <- ddply(assess, 'PARCEL', function(df){
+  rownames(df) <- df$TAX
+  data.frame(
+    county = df['COUNTY','ASSESSED'],
+    village = df['VILLAGE','ASSESSED'],
+    school = df['SCHOOL','ASSESSED'],
+    mean = mean(df$ASSESSED),
+    sd = sd(df$ASSESSED),
+    label = paste(df$ASSESSED, collapse = '; ')
+  )
+})
 
 p.variation.base <- ggplot(subset(assess.cast, sd > 0)) +
   scale_x_log10('Mean tax amount', labels = dollar) +
@@ -34,4 +40,9 @@ p.variation.base <- ggplot(subset(assess.cast, sd > 0)) +
   
 p.variation.explore <- p.variation.base + aes(label = label) + geom_text()
 p.variation.present <- p.variation.base + geom_point() +
-  geom_text(100000, 15000, 'Chateaux and\n50 Popham Road\n(apartments)')
+  annotate('text', 300000, 12000, label = 'Chateaux and\n50 Popham Road\n(apartments)')
+
+assess.cast$school.diff <- assess.cast$mean - assess.cast$school
+p.school <- ggplot(assess.cast) +
+  scale_x_log10('Difference between mean assessment and school tax assessment\n(If the school assessment was lower, this number is negative.)', labels = dollar) +
+  aes(x = school.diff) + geom_histogram()
