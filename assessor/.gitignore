@@ -1,5 +1,5 @@
 *.xml
 *.txt
-distributions*
-!distributions.py
-!distributions.hs
+distribution*
+!distribution.py
+!distribution.hs
