@@ -10,22 +10,19 @@
         width: 100%;
         display: block;
     }
-    .form-field label, .form-field input {
+    .form-field label, .form-field a, .form-field input {
         display: inline-block;
         margin-left: 1%;
         margin-right: 1%;
         padding: 0;
     }
-    .form-field label {
+    .form-field label, .form-field a {
         width: 87%;
         text-align: right;
     }
     .form-field input {
         border-width: 2px;
         width: 8%;
-    }
-    .form-field input[type=submit] {
-        margin-left: 85%;
     }
 
     /* Widths */
@@ -176,6 +173,7 @@ $.fn.serializeObject = function() {
     <form class="calculator">
         <label for="total">Assessed total value</label>
         <input class="slider" name="total" type="range" min="0" max="100000" value="<%= total %>" step="1000" />
+        <a href="#?advanced=true">Advanced version</a>
     </form>
 </script>
 <script type="text/template" id="input-advanced">
@@ -197,6 +195,7 @@ $.fn.serializeObject = function() {
             <input name="taxable_school" type="text" value="<%= taxable_school %>" pattern="[0-9]*" />
         </div>
         <div class="form-field">
+            <a href="#?advanced=false">Simple version</a>
             <input type="submit" value="Go">
         </div>
     </form>
@@ -214,16 +213,32 @@ $.fn.serializeObject = function() {
     // Views for basic and advanced statistics
     var InputView = Backbone.View.extend({
         el: "#input",
-        render: function(template_css, houseparams) {
+        render: function(template, houseparams) {
+            this.advanced = template === 'advanced'
+            var template_css = '#input-' + template
             var template = _.template($(template_css).html(), houseparams)
             this.$el.html(template)
         },
         output: function(e) {
             var raw = $(e.currentTarget).serializeObject()
+
+            // Change the href.
+            var href;
+            if (!this.advanced) {
+                href = '#?advanced=true&total=' + raw.total
+            } else {
+                href = '#?advanced=false'
+                for (k in raw) {
+                    href += ('&' + k + '=' + raw[k])
+                }
+            }
+            $('form a').attr('href', href)
+
+            // Calculate stuff.
             return output(raw)
         },
         onlydigits: function(e) {
-            e.currentTarget.value = e.currentTarget.value.replace(/[^0-9]/g, '');
+            e.currentTarget.value = e.currentTarget.value.replace(/[^0-9]/g, '')
         },
         events: {
             "change .calculator .slider": "output",
@@ -231,6 +246,7 @@ $.fn.serializeObject = function() {
             "keyup input[type=text]": "onlydigits"
         }
     })
+
     // http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
     var pretty= function(x) {
         // Separate three digits by a comma.
@@ -317,9 +333,9 @@ $.fn.serializeObject = function() {
 
             // Add the input stuff.
             if (params.advanced === 'true'){
-                inputView.render('#input-advanced', params)
+                inputView.render('advanced', params)
             } else {
-                inputView.render('#input-basic', params)
+                inputView.render('basic', params)
             }
         }
     })
