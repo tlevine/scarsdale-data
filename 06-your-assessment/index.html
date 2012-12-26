@@ -158,7 +158,11 @@ $.fn.serializeObject = function() {
 
         // Add the fraction back
         if (components.length === 2) {
-            pretty += '.' + components[1]
+            var after_decimal_point = components[1].substring(0,4)
+            while (after_decimal_point.length < 4) {
+                after_decimal_point += '0'
+            }
+            pretty += '.' + after_decimal_point
         }
 
         return pretty
