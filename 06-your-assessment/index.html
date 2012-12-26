@@ -376,7 +376,7 @@ $.fn.serializeObject = function() {
 
         var amount_county = validated.taxable_county * county_tax_rate / 1000
         var amount_village = validated.taxable_village * village_tax_rate / 1000
-        var amount_school = validated.taxable_school * county_tax_rate / 1000
+        var amount_school = validated.taxable_school * school_tax_rate / 1000
         // Compute tax amount by item
         $("tr.county td.tax-amount").text(pretty(amount_county))
         $("tr.village td.tax-amount").text(pretty(amount_village))
