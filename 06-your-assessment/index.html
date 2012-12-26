@@ -204,18 +204,20 @@ $.fn.serializeObject = function() {
         var components = x.toString().split('.')
 
         // Add commas
-        var pretty = components[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+        var before_decimal_point = components[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 
         // Add the fraction back
+        var after_decimal_point;
         if (components.length === 2) {
-            var after_decimal_point = components[1].substring(0,4)
+            after_decimal_point = components[1].substring(0,4)
             while (after_decimal_point.length < 4) {
                 after_decimal_point += '0'
             }
-            pretty += '.' + after_decimal_point
+        } else {
+            after_decimal_point = '0000';
         }
 
-        return pretty
+        return before_decimal_point + '.' + after_decimal_point
     }
 
     var output = function(raw) {
