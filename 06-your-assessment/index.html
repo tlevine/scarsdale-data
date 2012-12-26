@@ -64,7 +64,7 @@
             </tr>
         </tbody>
         <tfoot>
-            <tr>
+            <tr class="total">
                 <td colspan="6"></td>
                 <td class="total-tax-amount" class="tax-amount"></td>
             </tr>
@@ -130,48 +130,60 @@ $.fn.serializeObject = function() {
     var InputView = Backbone.View.extend({
         el: "#input",
         render: function(template_css, houseparams) {
-            var median = 19000
-            // Parse parameters
-            if (!houseparams) {
-                var houseparams = {}
-            }
-
-            var fields = ['total', 'taxable_county', 'taxable_village', 'taxable_school']
-            fields.map(function(name){
-                if (!houseparams[name]) {
-                    houseparams[name] = median
-                }
-            })
-
             var template = _.template($(template_css).html(), houseparams)
             this.$el.html(template)
         },
-        calculate: function(e) {
+        output: function(e) {
             var raw = $(e.currentTarget).serializeObject()
-            var validated = { total: parseFloat(raw.total) }
-
-            console.log(raw)
-            console.log(validated)
-            if (!validated.total) {
-                alert('Something went wrong.')
-                return false;
-            }
-
-            var fields = ['taxable_county', 'taxable_village', 'taxable_school']
-            fields.map(function(name){
-                validated[name] = raw[name] ? parseFloat(raw[name]) : validated.total
-            })
-            return false
+            return output(raw)
         },
         onlydigits: function(e) {
             e.currentTarget.value = e.currentTarget.value.replace(/[^0-9]/g, '');
         },
         events: {
-            "change .calculator .slider": "calculate",
-            "submit .calculator": "calculate",
+            "change .calculator .slider": "output",
+            "submit .calculator": "output",
             "keyup input[type=text]": "onlydigits"
         }
     })
+    // http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
+    var comma = function(x) {
+        // Separate three digits by a comma.
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    var output = function(raw) {
+        // Validate the form data, then print it pretty-like.
+        var validated = { total: parseFloat(raw.total) }
+
+        if (isNaN(validated.total)) {
+            alert('Something went wrong.')
+            return false;
+        }
+
+        var fields = ['taxable_county', 'taxable_village', 'taxable_school']
+        fields.map(function(name){
+            validated[name] = raw[name] ? parseFloat(raw[name]) : validated.total
+        })
+
+        var county_tax_rate = parseFloat($('tr.county td.tax-rate').text().replace(',', ''))
+        var village_tax_rate = parseFloat($('tr.village td.tax-rate').text().replace(',', ''))
+        var school_tax_rate = parseFloat($('tr.school td.tax-rate').text().replace(',', ''))
+
+        $("td.assessed-total-value").text(comma(validated.total))
+        $("tr.county td.assessed-taxable-value").text(comma(validated.taxable_county))
+        $("tr.village td.assessed-taxable-value").text(comma(validated.taxable_village))
+        $("tr.school td.assessed-taxable-value").text(comma(validated.taxable_school))
+
+        $("tr.county td.tax-amount").text(comma(validated.taxable_county * county_tax_rate / 1000))
+        $("tr.village td.tax-amount").text(comma(validated.taxable_village * village_tax_rate / 1000))
+        $("tr.school td.tax-amount").text(comma(validated.taxable_school * school_tax_rate / 1000))
+
+        $("tr.county td.assessed-taxable-value").text(comma(validated.taxable_county))
+        $("tr.village td.assessed-taxable-value").text(comma(validated.taxable_village))
+        $("tr.school td.assessed-taxable-value").text(comma(validated.taxable_school))
+        return false
+    }
 
     // Routes
     var inputView = new InputView()
@@ -179,10 +191,20 @@ $.fn.serializeObject = function() {
         routes: {
             "": "calculator",
         },
-        calculator: function(params){
+        calculator: function(houseparams){
+            var median = 19000
+            // Parse parameters
             if (!params) {
                 var params = {}
             }
+
+            var fields = ['total', 'taxable_county', 'taxable_village', 'taxable_school']
+            fields.map(function(name){
+                if (!params[name]) {
+                    params[name] = median
+                }
+            })
+
             if (params.advanced === 'true'){
                 inputView.render('#input-advanced', params)
             } else {
