@@ -35,7 +35,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr class="county">
                 <td class="levy-description">2012 COUNTY TAX</td>
                 <td class="total-tax-levy">27,078,607</td>
                 <td class="percent-change">3.17</td>
@@ -44,7 +44,7 @@
                 <td class="tax-rate">194.908400</td>
                 <td class="tax-amount"></td>
             </tr>
-            <tr>
+            <tr class="village">
                 <td class="levy-description">2012-2013 VILLAGE TX</td>
                 <td class="total-tax-levy">33,093,095</td>
                 <td class="percent-change">3.72</td>
@@ -53,7 +53,7 @@
                 <td class="tax-rate">238.420000</td>
                 <td class="tax-amount"></td>
             </tr>
-            <tr>
+            <tr class="school">
                 <td class="levy-description">2012-2013 School Tax</td>
                 <td class="total-tax-levy">127,045,773</td>
                 <td class="percent-change">2.89</td>
@@ -66,7 +66,7 @@
         <tfoot>
             <tr>
                 <td colspan="6"></td>
-                <td id="total-tax-amount" class="tax-amount"></td>
+                <td class="total-tax-amount" class="tax-amount"></td>
             </tr>
         </thead>
     </table>
@@ -100,7 +100,7 @@ $.fn.serializeObject = function() {
 <script type="text/template" id="input-basic">
     <form class="calculator">
         <label for="total">Assessed total value</label>
-        <input id="slider" name="total" type="range" min="0" max="100000" value="<%= total %>" step="1000" />
+        <input class="slider" name="total" type="range" min="0" max="100000" value="<%= total %>" step="1000" />
     </form>
 </script>
 <script type="text/template" id="input-advanced">
@@ -167,7 +167,7 @@ $.fn.serializeObject = function() {
             e.currentTarget.value = e.currentTarget.value.replace(/[^0-9]/g, '');
         },
         events: {
-            "change #slider": "calculate",
+            "change .calculator .slider": "calculate",
             "submit .calculator": "calculate",
             "keyup input[type=text]": "onlydigits"
         }
