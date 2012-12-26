@@ -82,8 +82,8 @@
 <!-- Templates -->
 <script type="text/template" id="input-basic">
     <form class="calculator">
-        <label for="assessed-taxable-value">Assessed taxable value</label>
-        <input name="assessed-taxable-value" type="range" min="0" max="100000" value="<%= taxable %>" step="1000" />
+        <label for="assessed-taxable-value">Assessed total value</label>
+        <input name="assessed-taxable-value" type="range" min="0" max="100000" value="<%= total %>" step="1000" />
     </form>
 </script>
 <script type="text/template" id="input-advanced">
@@ -118,7 +118,7 @@
             var median = 19000
             // Parse parameters
             if (!houseparams) {
-                houseparams = {}
+                var houseparams = {}
             }
             if (!houseparams.total) {
                 houseparams.total = median
@@ -145,15 +145,19 @@
     })
 
     // Routes
-    var inputView = new InputView()
     var Router = Backbone.Router.extend({
         routes: {
             "": "calculator",
         },
         calculator: function(params){
+            if (!params) {
+                var params = {}
+            }
             if (params.advanced){
+                var inputViewAdvanced = new InputViewAdvanced()
                 inputViewAdvanced.render(params)
             } else {
+                var inputViewBasic = new InputViewAdvanced()
                 inputViewBasic.render(params)
             }
         }
