@@ -77,17 +77,18 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.2/underscore-min.js" type="text/javascript"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js"></script>
+<script src="backbone.queryparams.js"></script>
 
 <!-- Templates -->
 <script type="text/template" id="input-basic">
     <label for="assessed-taxable-value">Assessed taxable value</label>
-    <input name="assessed-taxable-value" type="range" min="0" max="100000" value="19000" step="1000" />
+    <input name="assessed-taxable-value" type="range" min="0" max="100000" value="<%= taxable %>" step="1000" />
 </script>
 <script type="text/template" id="input-advanced">
     <label for="assessed-total-value">Assessed total value</label>
-    <input name="assessed-total-value" type="text" />
+    <input name="assessed-total-value" type="text" value="<%= total %>" />
     <label for="assessed-taxable-value">Assessed taxable value</label>
-    <input name="assessed-taxable-value" type="text" />
+    <input name="assessed-taxable-value" type="text" value="<%= taxable %>" />
     <button id="calculate">Go</button>
 </script>
 <script type="text/template" id="distribution">
@@ -97,4 +98,41 @@
         <li>Your assessed taxable value for village taxes is in the <%= taxable_village %>th percentile.</li>
         <li>Your assessed taxable value for school taxes is in the <%= taxable_school %>th percentile.</li>
     </ul>
+</script>
+
+<script>
+    // Views for basic and advanced statistics
+    var Router = Backbone.Router.extend({
+        routes: {
+            "": "basic",
+            "advanced": "advanced"
+        }
+    })
+    var Input = Backbone.View.extend({
+        el: "#input",
+        render: function(advancedness, houseparams) {
+            // Which template to use?
+            var template_el = advancedness === 'advanced' ? $('#input-advanced') : $('#input-basic')
+
+            // Parse parameters
+            if (!houseparams) {
+                houseparams = {}
+            }
+            if (!houseparams.total) {
+                houseparams.total = 0
+            }
+            if (!houseparams.taxable) {
+                houseparams.taxable = 0
+            }
+
+            var template = _.template(template_el.html(), houseparams)
+            this.$el(template)
+        }
+    })
+    router.on('route:basic': function(params){
+        Input.render('basic', params)
+    });
+    router.on('route:advanced': function(params){
+        Input.render('advanced', params)
+    });
 </script>
