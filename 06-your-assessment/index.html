@@ -467,16 +467,16 @@ $.fn.serializeObject = function() {
             "": "calculator",
         },
         calculator: function(params){
-            var median = 19000
             // Parse parameters
             if (!params) {
-                var params = {}
+                // Use the median by default
+                var params = {total: 19000}
             }
 
-            var fields = ['total', 'taxable_county', 'taxable_village', 'taxable_school']
+            var fields = ['taxable_county', 'taxable_village', 'taxable_school']
             fields.map(function(name){
                 if (!params[name]) {
-                    params[name] = median
+                    params[name] = params.total
                 }
             })
 
