@@ -218,10 +218,10 @@ $.fn.serializeObject = function() {
         <input class="slider" name="total" type="range" min="0" max="100000" value="<%= total %>" step="1000" />
         <div class="scale">
             <span class="min">$0</span>
-            <span class="current"></span>
+            <span class="current" style="left: <%= slider %>;">$<%= pretty_total %></span>
             <span class="max">$100,000</span>
         </div>
-        <a href="#?advanced=true">Advanced version</a>
+        <a href="#?advanced=true&total=<%= total %>">Advanced version</a>
     </form>
 </script>
 <script type="text/template" id="input-advanced">
@@ -243,7 +243,7 @@ $.fn.serializeObject = function() {
             <input name="taxable_school" type="text" value="<%= taxable_school %>" pattern="[0-9]*" />
         </div>
         <div class="form-field">
-            <a href="#?advanced=false">Simple version</a>
+            <a href="#?advanced=false&total=<%= total %>">Simple version</a>
             <input type="submit" value="Go">
         </div>
     </form>
@@ -263,6 +263,8 @@ $.fn.serializeObject = function() {
         el: "#input",
         render: function(template, houseparams) {
             this.advanced = template === 'advanced'
+            houseparams.pretty_total = pretty(houseparams.total)
+            houseparams.slider = slider_loc(houseparams.total)
             var template_css = '#input-' + template
             var template = _.template($(template_css).html(), houseparams)
             this.$el.html(template)
@@ -323,6 +325,9 @@ $.fn.serializeObject = function() {
         return before_decimal_point + after_decimal_point
     }
 
+    var slider_loc = function(total) {
+        return ((100 * total / 100000) - 3) + '%'
+    }
     var output = function(raw) {
         // Validate the form data, then print it pretty-like.
         var validated = { total: parseFloat(raw.total) }
@@ -336,7 +341,7 @@ $.fn.serializeObject = function() {
         // Dunno why this doesn't work on load.
         // It's a hack anyway; use a model.
         $('.scale .current').text('$' + pretty(validated.total))
-        $('.scale .current').css('left', ((100 * validated.total / 100000) - 3) + '%')
+        $('.scale .current').css('left', slider_loc(validated.total))
 
         var fields = ['taxable_county', 'taxable_village', 'taxable_school']
         fields.map(function(name){
