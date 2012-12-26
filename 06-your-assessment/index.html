@@ -1,80 +1,100 @@
-<p>
-    Your house is assessed to determine the Assessed Total Value, then
-    excemptions are subtracted to it to produce the Assessed Taxable Value.
-    This times the tax rate (in permil) produces your Tax Amount.
-</p>
-<p>
-    If you add up the county, village and school tax rates, it comes to about
-    $1,000, so your tax payments are about equal to the assessed value of your
-    house. There are also the sewer and solid waste taxes, but those are much
-    smaller.
-</p>
-<p>
-    Enter the assessed taxable value of your house to find out what you pay in
-    taxes and how you compare to everyone else. You can find your house's
-    assessed total and taxable values [here]().
-</p>
-<div id="input-basic">
-    <label for="assessed-taxable-value">Assessed taxable value</label>
-    <input name="assessed-taxable-value" type="range" min="0" max="1000000" value="25" step="1000" />
+<!-- Layout -->
+<div id="app">
+    <div id="about">
+        <p>
+            Your house is assessed to determine its Assessed Total Value, then
+            excemptions are subtracted to it to produce the Assessed Taxable Value.
+            This times the tax rate (in permil) produces your Tax Amount.
+        </p>
+        <p>
+            If you add up the county, village and school tax rates, it comes to about
+            $1,000, so your tax payments are about equal to the assessed value of your
+            house. There are also the sewer and solid waste taxes, but those are much
+            smaller.
+        </p>
+    </div>
+    <div id="directions">
+        <p>
+            Enter the assessed taxable value of your house to find out what you pay in
+            taxes and how you compare to everyone else. You can find your house's
+            assessed total and taxable values [here]().
+        </p>
+    </div>
+    <div id="input">
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th class="levy-description">Levy Description</th>
+                <th class="total-tax-levy">Total Tax Levy</th>
+                <th class="percent-change">% Change from Prior Year</th>
+                <th class="assessed-total-value">Assessed Total Value</th>
+                <th class="assessed-taxable-value">Assessed Taxable Value</th>
+                <th class="tax-rate">Tax Rate</th>
+                <th class="tax-amount">Tax Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="levy-description">2012 COUNTY TAX</td>
+                <td class="total-tax-levy">27,078,607</td>
+                <td class="percent-change">3.17</td>
+                <td class="assessed-total-value"></td>
+                <td class="assessed-taxable-value"></td>
+                <td class="tax-rate">194.908400</td>
+                <td class="tax-amount"></td>
+            </tr>
+            <tr>
+                <td class="levy-description">2012-2013 VILLAGE TX</td>
+                <td class="total-tax-levy">33,093,095</td>
+                <td class="percent-change">3.72</td>
+                <td class="assessed-total-value"></td>
+                <td class="assessed-taxable-value"></td>
+                <td class="tax-rate">238.420000</td>
+                <td class="tax-amount"></td>
+            </tr>
+            <tr>
+                <td class="levy-description">2012-2013 School Tax</td>
+                <td class="total-tax-levy">127,045,773</td>
+                <td class="percent-change">2.89</td>
+                <td class="assessed-total-value"></td>
+                <td class="assessed-taxable-value"></td>
+                <td class="tax-rate">868.927000</td>
+                <td class="tax-amount"></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="6"></td>
+                <td id="total-tax-amount" class="tax-amount"></td>
+            </tr>
+        </thead>
+    </table>
 </div>
-<div id="input-advanced">
+
+
+<!-- Libraries -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.2/underscore-min.js" type="text/javascript"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js"></script>
+
+<!-- Templates -->
+<script type="text/template" id="input-basic">
+    <label for="assessed-taxable-value">Assessed taxable value</label>
+    <input name="assessed-taxable-value" type="range" min="0" max="100000" value="19000" step="1000" />
+</script>
+<script type="text/template" id="input-advanced">
     <label for="assessed-total-value">Assessed total value</label>
     <input name="assessed-total-value" type="text" />
     <label for="assessed-taxable-value">Assessed taxable value</label>
     <input name="assessed-taxable-value" type="text" />
     <button id="calculate">Go</button>
-</div>
-<table>
-    <thead>
-        <tr>
-            <th class="levy-description">Levy Description</th>
-            <th class="total-tax-levy">Total Tax Levy</th>
-            <th class="percent-change">% Change from Prior Year</th>
-            <th class="assessed-total-value">Assessed Total Value</th>
-            <th class="assessed-taxable-value">Assessed Taxable Value</th>
-            <th class="tax-rate">Tax Rate</th>
-            <th class="tax-amount">Tax Amount</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td class="levy-description">2012 COUNTY TAX</td>
-            <td class="total-tax-levy">27,078,607</td>
-            <td class="percent-change">3.17</td>
-            <td class="assessed-total-value"></td>
-            <td class="assessed-taxable-value"></td>
-            <td class="tax-rate">194.908400</td>
-            <td class="tax-amount"></td>
-        </tr>
-        <tr>
-            <td class="levy-description">2012-2013 VILLAGE TX</td>
-            <td class="total-tax-levy">33,093,095</td>
-            <td class="percent-change">3.72</td>
-            <td class="assessed-total-value"></td>
-            <td class="assessed-taxable-value"></td>
-            <td class="tax-rate">238.420000</td>
-            <td class="tax-amount"></td>
-        </tr>
-        <tr>
-            <td class="levy-description">2012-2013 School Tax</td>
-            <td class="total-tax-levy">127,045,773</td>
-            <td class="percent-change">2.89</td>
-            <td class="assessed-total-value"></td>
-            <td class="assessed-taxable-value"></td>
-            <td class="tax-rate">868.927000</td>
-            <td class="tax-amount"></td>
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <td colspan="6"></td>
-            <td class="tax-amount"></td>
-        </tr>
-    </thead>
-</table>
-<ul id="distribution">
-    <li>Your assessed total value in the <%= total %>th percentile of assessed total values.</li>
-    <li>Your assessed taxable value for school taxes is in the <%= taxable %>th percentile.</li>
-    <li>&amp;c.</li>
-</ul>
+</script>
+<script type="text/template" id="distribution">
+    <ul>
+        <li>Your assessed total value in the <%= total %>th percentile of assessed total values.</li>
+        <li>Your assessed taxable value for county taxes is in the <%= taxable_county %>th percentile.</li>
+        <li>Your assessed taxable value for village taxes is in the <%= taxable_village %>th percentile.</li>
+        <li>Your assessed taxable value for school taxes is in the <%= taxable_school %>th percentile.</li>
+    </ul>
+</script>
