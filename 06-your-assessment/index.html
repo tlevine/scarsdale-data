@@ -102,13 +102,7 @@
 
 <script>
     // Views for basic and advanced statistics
-    var Router = Backbone.Router.extend({
-        routes: {
-            "": "basic",
-            "advanced": "advanced"
-        }
-    })
-    var Input = Backbone.View.extend({
+    var InputView = Backbone.View.extend({
         el: "#input",
         render: function(advancedness, houseparams) {
             // Which template to use?
@@ -126,13 +120,26 @@
             }
 
             var template = _.template(template_el.html(), houseparams)
-            this.$el(template)
+            this.$el.html(template)
         }
     })
-    router.on('route:basic': function(params){
-        Input.render('basic', params)
-    });
-    router.on('route:advanced': function(params){
-        Input.render('advanced', params)
-    });
+
+    // Routes
+    var inputView = new InputView()
+    var Router = Backbone.Router.extend({
+        routes: {
+            "": "basic",
+            "advanced": "advanced"
+        },
+        basic: function(params){
+            inputView.render('basic', params)
+        },
+        advanced: function(params){
+            inputView.render('advanced', params)
+        }
+    })
+
+    // Go
+    var router = new Router()
+    Backbone.history.start()
 </script>
