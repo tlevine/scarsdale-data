@@ -4,26 +4,61 @@
         padding: 0;
     }
 
-    form {
+    form.calculator {
         height: 10em;
     }
-    .form-field {
+
+    form.calculator-basic label,
+    form.calculator-basic .scale,
+    form.calculator-basic input,
+    form.calculator-basic a {
+        display: block;
+        width: 100%;
+    }
+    form.calculator-basic label {
+        font-weight: bold;
+        text-align: center;
+    }
+    form.calculator-basic input {
+        height: 45%;
+    }
+    form.calculator-basic a {
+        text-align: right;
+    }
+    form.calculator-basic .scale {
+        font-weight: bold;
+        height: 20%;
+    }
+    form.calculator-basic .scale .min {
+        float: left;
+        text-align: left;
+    }
+    form.calculator-basic .scale .max {
+        float: right;
+        text-align: right;
+    }
+
+
+    form.calculator-advanced .form-field {
         height: 2em;
         float: right;
         width: 100%;
         display: block;
     }
-    .form-field label, .form-field a, .form-field input {
+    form.calculator-advanced .form-field label,
+    form.calculator-advanced .form-field a,
+    form.calculator-advanced .form-field input {
         display: inline-block;
         margin-left: 1%;
         margin-right: 1%;
         padding: 0;
     }
-    .form-field label, .form-field a {
+    form.calculator-advanced .form-field label,
+    form.calculator-advanced .form-field a {
         width: 87%;
         text-align: right;
     }
-    .form-field input {
+    form.calculator-advanced .form-field input {
         border-width: 2px;
         width: 8%;
     }
@@ -173,14 +208,18 @@ $.fn.serializeObject = function() {
 
 <!-- Templates -->
 <script type="text/template" id="input-basic">
-    <form class="calculator">
+    <form class="calculator calculator-basic">
         <label for="total">Assessed total value</label>
         <input class="slider" name="total" type="range" min="0" max="100000" value="<%= total %>" step="1000" />
+        <div class="scale">
+            <span class="min">$0</span>
+            <span class="max">$100,000</span>
+        </div>
         <a href="#?advanced=true">Advanced version</a>
     </form>
 </script>
 <script type="text/template" id="input-advanced">
-    <form class="calculator">
+    <form class="calculator calculator-advanced">
         <div class="form-field">
             <label for="total">Assessed total value</label>
             <input name="total" type="text" value="<%= total %>" pattern="[0-9]*" />
@@ -228,14 +267,15 @@ $.fn.serializeObject = function() {
             // Change the href.
             var href;
             if (!this.advanced) {
-                href = '#?advanced=true&total=' + raw.total
+                href = '#?total=' + raw.total
             } else {
-                href = '#?advanced=false'
+                href = '#?'
                 for (k in raw) {
                     href += ('&' + k + '=' + raw[k])
                 }
             }
-            $('form a').attr('href', href)
+            $('form a').attr('href', href + '&advanced=' + !this.advanced)
+            router.navigate(href + '&advanced=' + this.advanced)
 
             // Calculate stuff.
             return output(raw)
