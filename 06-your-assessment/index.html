@@ -66,7 +66,7 @@
         <tfoot>
             <tr class="total">
                 <td colspan="6"></td>
-                <td class="total-tax-amount" class="tax-amount"></td>
+                <td class="tax-amount"></td>
             </tr>
         </thead>
     </table>
@@ -149,7 +149,19 @@ $.fn.serializeObject = function() {
     // http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
     var comma = function(x) {
         // Separate three digits by a comma.
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        // Separate places greater than zero from those less than zero
+        var components = x.toString().split('.')
+
+        // Add commas
+        var pretty = components[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+
+        // Add the fraction back
+        if (components.length === 2) {
+            pretty += '.' + components[1]
+        }
+
+        return pretty
     }
 
     var output = function(raw) {
@@ -170,18 +182,22 @@ $.fn.serializeObject = function() {
         var village_tax_rate = parseFloat($('tr.village td.tax-rate').text().replace(',', ''))
         var school_tax_rate = parseFloat($('tr.school td.tax-rate').text().replace(',', ''))
 
+        // Copy input values
         $("td.assessed-total-value").text(comma(validated.total))
         $("tr.county td.assessed-taxable-value").text(comma(validated.taxable_county))
         $("tr.village td.assessed-taxable-value").text(comma(validated.taxable_village))
         $("tr.school td.assessed-taxable-value").text(comma(validated.taxable_school))
 
-        $("tr.county td.tax-amount").text(comma(validated.taxable_county * county_tax_rate / 1000))
-        $("tr.village td.tax-amount").text(comma(validated.taxable_village * village_tax_rate / 1000))
-        $("tr.school td.tax-amount").text(comma(validated.taxable_school * school_tax_rate / 1000))
+        var amount_county = validated.taxable_county * county_tax_rate / 1000
+        var amount_village = validated.taxable_village * village_tax_rate / 1000
+        var amount_school = validated.taxable_school * county_tax_rate / 1000
+        // Compute tax amount by item
+        $("tr.county td.tax-amount").text(comma(amount_county))
+        $("tr.village td.tax-amount").text(comma(amount_village))
+        $("tr.school td.tax-amount").text(comma(amount_school))
 
-        $("tr.county td.assessed-taxable-value").text(comma(validated.taxable_county))
-        $("tr.village td.assessed-taxable-value").text(comma(validated.taxable_village))
-        $("tr.school td.assessed-taxable-value").text(comma(validated.taxable_school))
+        // Total tax amount
+        $("tr.total td.tax-amount").text(comma(amount_county + amount_village + amount_school))
         return false
     }
 
@@ -205,6 +221,10 @@ $.fn.serializeObject = function() {
                 }
             })
 
+            // Compute the values for these (potentially default) form parameters
+            output(params)
+
+            // Add the input stuff.
             if (params.advanced === 'true'){
                 inputView.render('#input-advanced', params)
             } else {
