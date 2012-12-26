@@ -130,11 +130,10 @@
             this.$el.html(template)
         },
         calculate: function(e) {
-            alert('aoeu')
             $(ev.currentTarget).serializeObject()
         },
         events: {
-            "click *": "calculate"
+            "change #slider": "calculate"
         }
     })
 
