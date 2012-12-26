@@ -2,3 +2,5 @@ Pick out the full market value, and use this to compute the total assessed
 value, rather than just the taxable value. It's a really easy string match.
 
     FULL MKT VAL 870,056
+
+And fix this in the app so we get assessed total value.
