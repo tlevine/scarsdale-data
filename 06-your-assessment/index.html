@@ -149,9 +149,11 @@ $.fn.serializeObject = function() {
         calculate: function(e) {
             var d = $(e.currentTarget).serializeObject()
             console.log(d)
+            return false
         },
         events: {
-            "change #slider": "calculate"
+            "change #slider": "calculate",
+            "submit .calculator": "calculate"
         }
     })
 
