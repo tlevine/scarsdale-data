@@ -1,7 +1,6 @@
 <style>
-    table, table * {
-        margin: 0;
-        padding: 0;
+    table {
+        border-collapse: collapse;
     }
 
     form.calculator {
@@ -75,7 +74,7 @@
     table {
         width: 100%;
     }
-    table th, table td {
+    table.levy th, table.levy td {
         width: 14.28571%;
     }
 
@@ -87,28 +86,45 @@
     */
 
     /* Borders */
-    table, tbody {
-        border-collapse: collapse;
+    table.levy, table.levy tbody {
         border: 1px solid black;
     }
-    thead th, thead td ,
-    tbody th, tbody td {
+    table.levy thead th, table.levy thead td ,
+    table.levy tbody th, table.levy tbody td {
         border-left: 1px solid black;
         border-right: 1px solid black;
     }
 
     /* Background color */
-    thead th {
+    table.levy thead th {
         background-color: #DDD;
     }
 
     /* Text alignment */
-    thead th {
+    table.levy thead th {
         text-align: center;
     }
-    tbody .total-tax-levy, tbody .percent-change,
-    tbody .assessed-total-value, tbody .assessed-taxable-value, 
-    tbody .tax-rate,  tbody .tax-amount, tfoot .tax-amount {
+    table.levy tbody .total-tax-levy, table.levy tbody .percent-change,
+    table.levy tbody .assessed-total-value, table.levy tbody .assessed-taxable-value, 
+    table.levy tbody .tax-rate,  table.levy tbody .tax-amount, tfoot .tax-amount {
+        text-align: right;
+    }
+
+    /* Additional information table */
+    table.additional-information {
+        margin-top: 2em;
+        text-transform: uppercase;
+        line-height: 2em;
+    }
+    table.additional-information thead {
+        text-align: left;
+        font-weight: bold;
+    }
+    table.additional-information tbody {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+    table.additional-information td.number {
         text-align: right;
     }
 </style>
@@ -137,7 +153,7 @@
     </div>
     <div id="input">
     </div>
-    <table>
+    <table class="levy">
         <thead>
             <tr>
                 <th class="levy-description">Levy Description</th>
@@ -185,8 +201,8 @@
             </tr>
         </thead>
     </table>
+    <div id="distribution"></div>
 </div>
-<div id="distribution"></div>
 
 
 <!-- Libraries -->
@@ -250,11 +266,28 @@ $.fn.serializeObject = function() {
     </form>
 </script>
 <script type="text/template" id="distribution-template">
+    <table class="additional-information">
+        <thead>
+            <tr>
+                <th colspan="2">Additional Information</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Full market value of this Property</td>
+                <td class="number"><%= market_value %></td>
+            </tr>
+            <tr>
+                <td>Uniform percent used to calculate full market value</td>
+                <td class="number">1.87</td>
+            </tr>
+        </tbody>
+    </table>
     <ul>
-        <li>You house's assessed <strong>total</strong> value is greater than that of <strong><%= total %></strong> of houses.</li>
-        <li>You house's assessed taxable value for <strong>county</strong> taxes is greater than that of <strong><%= taxable_county %></strong> of houses.</li>
-        <li>You house's assessed taxable value for <strong>village</strong> taxes is greater than that of <strong><%= taxable_village %></strong> of houses.</li>
-        <li>You house's assessed taxable value for <strong>school</strong> taxes is greater than that of <strong><%= taxable_school %></strong> of houses.</li>
+        <li>You house's assessed <strong>total</strong> value is greater than that of <strong><%= total %></strong> of properties.</li>
+        <li>You house's assessed taxable value for <strong>county</strong> taxes is greater than that of <strong><%= taxable_county %></strong> of properties.</li>
+        <li>You house's assessed taxable value for <strong>village</strong> taxes is greater than that of <strong><%= taxable_village %></strong> of properties.</li>
+        <li>You house's assessed taxable value for <strong>school</strong> taxes is greater than that of <strong><%= taxable_school %></strong> of properties.</li>
     </ul>
 </script>
 
@@ -404,14 +437,15 @@ $.fn.serializeObject = function() {
     var DistributionView = Backbone.View.extend({
         el: '#distribution',
         render: function(houseparams) {
-            var percentiles = {
+            var info = {
+                market_value: pretty(houseparams.total / 0.0187),
                 total: percentile(TOTAL_POPULATION, houseparams.total),
                 taxable_county: percentile(TAXABLE_COUNTY_POPULATION, houseparams.total),
                 taxable_village: percentile(TAXABLE_VILLAGE_POPULATION, houseparams.total),
                 taxable_school: percentile(TAXABLE_SCHOOL_POPULATION, houseparams.total)
             }
 
-            var template = _.template($('#distribution-template').html(), percentiles)
+            var template = _.template($('#distribution-template').html(), info)
             this.$el.html(template)
         }
     })
