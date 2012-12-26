@@ -6,6 +6,7 @@
 
     form.calculator {
         height: 10em;
+        position: relative;
     }
 
     form.calculator-basic label,
@@ -32,6 +33,10 @@
     form.calculator-basic .scale .min {
         float: left;
         text-align: left;
+    }
+    form.calculator-basic .scale .current {
+        position: absolute;
+        bottom: 35%;
     }
     form.calculator-basic .scale .max {
         float: right;
@@ -213,6 +218,7 @@ $.fn.serializeObject = function() {
         <input class="slider" name="total" type="range" min="0" max="100000" value="<%= total %>" step="1000" />
         <div class="scale">
             <span class="min">$0</span>
+            <span class="current"></span>
             <span class="max">$100,000</span>
         </div>
         <a href="#?advanced=true">Advanced version</a>
@@ -271,7 +277,7 @@ $.fn.serializeObject = function() {
             } else {
                 href = '#?'
                 for (k in raw) {
-                    href += ('&' + k + '=' + raw[k])
+                    href += (k + '=' + raw[k] + '&')
                 }
             }
             $('form a').attr('href', href + '&advanced=' + !this.advanced)
@@ -291,7 +297,7 @@ $.fn.serializeObject = function() {
     })
 
     // http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
-    var pretty= function(x) {
+    var pretty= function(x, places) {
         // Separate three digits by a comma.
 
         // Separate places greater than zero from those less than zero
@@ -302,16 +308,19 @@ $.fn.serializeObject = function() {
 
         // Add the fraction back
         var after_decimal_point;
-        if (components.length === 2) {
-            after_decimal_point = components[1].substring(0,4)
-            while (after_decimal_point.length < 4) {
+        if (components.length === 2 && places) {
+            after_decimal_point = components[1].substring(0,places)
+            after_decimal_point += '.'
+            while (after_decimal_point.length < places) {
                 after_decimal_point += '0'
             }
+        } else if (places) {
+            after_decimal_point = '.0000'
         } else {
-            after_decimal_point = '0000';
+            after_decimal_point = ''
         }
 
-        return before_decimal_point + '.' + after_decimal_point
+        return before_decimal_point + after_decimal_point
     }
 
     var output = function(raw) {
@@ -322,6 +331,12 @@ $.fn.serializeObject = function() {
             alert('Something went wrong.')
             return false;
         }
+
+        // If we're using the slider, set the current value.
+        // Dunno why this doesn't work on load.
+        // It's a hack anyway; use a model.
+        $('.scale .current').text('$' + pretty(validated.total))
+        $('.scale .current').css('left', ((100 * validated.total / 100000) - 3) + '%')
 
         var fields = ['taxable_county', 'taxable_village', 'taxable_school']
         fields.map(function(name){
@@ -348,6 +363,7 @@ $.fn.serializeObject = function() {
 
         // Total tax amount
         $("tr.total td.tax-amount").text(pretty(amount_county + amount_village + amount_school))
+
         return false
     }
 
