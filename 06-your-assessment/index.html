@@ -147,7 +147,8 @@ $.fn.serializeObject = function() {
             this.$el.html(template)
         },
         calculate: function(e) {
-            $(ev.currentTarget).serializeObject()
+            var d = $(e.currentTarget).serializeObject()
+            console.log(d)
         },
         events: {
             "change #slider": "calculate"
