@@ -3,6 +3,31 @@
         margin: 0;
         padding: 0;
     }
+
+    .form-field {
+        height: 2em;
+        float: right;
+        width: 100%;
+        display: block;
+    }
+    .form-field label, .form-field input {
+        display: inline-block;
+        margin-left: 1%;
+        margin-right: 1%;
+        padding: 0;
+    }
+    .form-field label {
+        width: 87%;
+        text-align: right;
+    }
+    .form-field input {
+        border-width: 2px;
+        width: 8%;
+    }
+    .form-field input[type=submit] {
+        margin-left: 85%;
+    }
+
     /* Widths */
     #app {
         width: 800px;
@@ -155,15 +180,25 @@ $.fn.serializeObject = function() {
 </script>
 <script type="text/template" id="input-advanced">
     <form class="calculator">
-        <label for="total">Assessed total value</label>
-        <input name="total" type="text" value="<%= total %>" pattern="[0-9]*" />
-        <label for="taxable_county">Assessed taxable value for county tax</label>
-        <input name="taxable_county" type="text" value="<%= taxable_county %>" pattern="[0-9]*" />
-        <label for="taxable_village">Assessed taxable value for village tax</label>
-        <input name="taxable_village" type="text" value="<%= taxable_village %>" pattern="[0-9]*" />
-        <label for="taxable_school">Assessed taxable value for school tax</label>
-        <input name="taxable_school" type="text" value="<%= taxable_school %>" pattern="[0-9]*" />
-        <input type="submit" value="Go">
+        <div class="form-field">
+            <label for="total">Assessed total value</label>
+            <input name="total" type="text" value="<%= total %>" pattern="[0-9]*" />
+        </div>
+        <div class="form-field">
+            <label for="taxable_county">Assessed taxable value for county tax</label>
+            <input name="taxable_county" type="text" value="<%= taxable_county %>" pattern="[0-9]*" />
+        </div>
+        <div class="form-field">
+            <label for="taxable_village">Assessed taxable value for village tax</label>
+            <input name="taxable_village" type="text" value="<%= taxable_village %>" pattern="[0-9]*" />
+        </div>
+        <div class="form-field">
+            <label for="taxable_school">Assessed taxable value for school tax</label>
+            <input name="taxable_school" type="text" value="<%= taxable_school %>" pattern="[0-9]*" />
+        </div>
+        <div class="form-field">
+            <input type="submit" value="Go">
+        </div>
     </form>
 </script>
 <script type="text/template" id="distribution">
