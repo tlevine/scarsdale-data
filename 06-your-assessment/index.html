@@ -1,4 +1,9 @@
 <style>
+    table, table * {
+        margin: 0;
+        padding: 0;
+    }
+    /* Widths */
     #app {
         width: 800px;
     }
@@ -8,9 +13,37 @@
     table th, table td {
         width: 14.28571%;
     }
-    table .total-tax-levy, table .percent-change,
-    table .assessed-total-value, table .assessed-taxable-value, 
-    table .tax-rate,  table .tax-amount {
+
+    /* Match the styling of the paper. This includes
+       - Text alignment
+       - Line breaks
+       - Borders
+       - Colors
+    */
+
+    /* Borders */
+    table, tbody {
+        border-collapse: collapse;
+        border: 1px solid black;
+    }
+    thead th, thead td ,
+    tbody th, tbody td {
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+    }
+
+    /* Background color */
+    thead th {
+        background-color: #DDD;
+    }
+
+    /* Text alignment */
+    thead th {
+        text-align: center;
+    }
+    tbody .total-tax-levy, tbody .percent-change,
+    tbody .assessed-total-value, tbody .assessed-taxable-value, 
+    tbody .tax-rate,  tbody .tax-amount, tfoot .tax-amount {
         text-align: right;
     }
 </style>
@@ -82,7 +115,7 @@
         </tbody>
         <tfoot>
             <tr class="total">
-                <td colspan="6"></td>
+                <td class="note" colspan="6" style="text-align: right;">Total:</td>
                 <td class="tax-amount"></td>
             </tr>
         </thead>
