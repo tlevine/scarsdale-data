@@ -2,7 +2,7 @@ library(reshape2)
 library(ggplot2)
 library(scales)
 
-assess <- read.csv('assessor/distribution.csv')
+assess <- read.csv('05-assessment-distribution.csv')
 
 # Check ordering for considering row grouping
 if (sum(assess$TAX != c('COUNTY', 'VILLAGE', 'SCHOOL')) > 0) {
