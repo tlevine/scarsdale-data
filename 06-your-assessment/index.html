@@ -83,7 +83,7 @@
 <script type="text/template" id="input-basic">
     <form class="calculator">
         <label for="assessed-taxable-value">Assessed total value</label>
-        <input name="assessed-taxable-value" type="range" min="0" max="100000" value="<%= total %>" step="1000" />
+        <input id="slider" name="assessed-taxable-value" type="range" min="0" max="100000" value="<%= total %>" step="1000" />
     </form>
 </script>
 <script type="text/template" id="input-advanced">
@@ -110,41 +110,33 @@
 
 <script>
     // Views for basic and advanced statistics
-    var InputViewBase = Backbone.View.extend({
+    var InputView = Backbone.View.extend({
         el: "#input",
-        render: function(houseparams) {
-            // Which template to use?
-            var template_el = this.$advancedness === 'advanced' ? $('#input-advanced') : $('#input-basic')
+        render: function(template_css, houseparams) {
             var median = 19000
             // Parse parameters
             if (!houseparams) {
                 var houseparams = {}
             }
-            if (!houseparams.total) {
-                houseparams.total = median
-            }
-            if (!houseparams.taxable_county) {
-                houseparams.taxable_county = median
-            }
 
-            var template = _.template(template_el.html(), houseparams)
+            var fields = ['total', 'taxable_county', 'taxable_village', 'taxable_school']
+            fields.map(function(name){
+                if (!houseparams[name]) {
+                    houseparams[name] = median
+                }
+            })
+
+            var template = _.template($(template_css).html(), houseparams)
             this.$el.html(template)
         },
         calculate: function(e) {
+            alert('aoeu')
             $(ev.currentTarget).serializeObject()
         }
     })
-    var InputViewBasic = InputViewBase.extend({
-        advancedness: "basic",
-        events: {
-            'Change .calculator': 'calculate',
-        }
-    })
-    var InputViewAdvanced = InputViewBase.extend({
-        advancedness: "advanced"
-    })
 
     // Routes
+    var inputView = new InputView()
     var Router = Backbone.Router.extend({
         routes: {
             "": "calculator",
@@ -153,12 +145,10 @@
             if (!params) {
                 var params = {}
             }
-            if (params.advanced){
-                var inputViewAdvanced = new InputViewAdvanced()
-                inputViewAdvanced.render(params)
+            if (params.advanced === 'true'){
+                inputView.render('#input-advanced', params)
             } else {
-                var inputViewBasic = new InputViewAdvanced()
-                inputViewBasic.render(params)
+                inputView.render('#input-basic', params)
             }
         }
     })
