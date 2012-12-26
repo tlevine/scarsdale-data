@@ -81,15 +81,19 @@
 
 <!-- Templates -->
 <script type="text/template" id="input-basic">
-    <label for="assessed-taxable-value">Assessed taxable value</label>
-    <input name="assessed-taxable-value" type="range" min="0" max="100000" value="<%= taxable %>" step="1000" />
+    <form class="calculator">
+        <label for="assessed-taxable-value">Assessed taxable value</label>
+        <input name="assessed-taxable-value" type="range" min="0" max="100000" value="<%= taxable %>" step="1000" />
+    </form>
 </script>
 <script type="text/template" id="input-advanced">
-    <label for="assessed-total-value">Assessed total value</label>
-    <input name="assessed-total-value" type="text" value="<%= total %>" />
-    <label for="assessed-taxable-value">Assessed taxable value</label>
-    <input name="assessed-taxable-value" type="text" value="<%= taxable %>" />
-    <button id="calculate">Go</button>
+    <form class="calculator">
+        <label for="assessed-total-value">Assessed total value</label>
+        <input name="assessed-total-value" type="text" value="<%= total %>" />
+        <label for="assessed-taxable-value">Assessed taxable value</label>
+        <input name="assessed-taxable-value" type="text" value="<%= taxable %>" />
+        <input type="submit" value="Go">
+    </form>
 </script>
 <script type="text/template" id="distribution">
     <ul>
@@ -102,11 +106,11 @@
 
 <script>
     // Views for basic and advanced statistics
-    var InputView = Backbone.View.extend({
+    var InputViewBase = Backbone.View.extend({
         el: "#input",
-        render: function(advancedness, houseparams) {
+        render: function(houseparams) {
             // Which template to use?
-            var template_el = advancedness === 'advanced' ? $('#input-advanced') : $('#input-basic')
+            var template_el = this.$advancedness === 'advanced' ? $('#input-advanced') : $('#input-basic')
 
             // Parse parameters
             if (!houseparams) {
@@ -121,7 +125,19 @@
 
             var template = _.template(template_el.html(), houseparams)
             this.$el.html(template)
+        },
+        calculate: function(e) {
+            $(ev.currentTarget).serializeObject()
         }
+    })
+    var InputViewBasic = InputViewBase.extend({
+        advancedness: "basic",
+        events: {
+            'Change .calculator': 'calculate',
+        }
+    })
+    var InputViewAdvanced = InputViewBase.extend({
+        advancedness: "advanced"
     })
 
     // Routes
@@ -132,10 +148,10 @@
             "advanced": "advanced"
         },
         basic: function(params){
-            inputView.render('basic', params)
+            inputViewBasic.render(params)
         },
         advanced: function(params){
-            inputView.render('advanced', params)
+            inputViewAdvanced.render(params)
         }
     })
 
