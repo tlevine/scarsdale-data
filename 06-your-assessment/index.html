@@ -99,20 +99,20 @@ $.fn.serializeObject = function() {
 <!-- Templates -->
 <script type="text/template" id="input-basic">
     <form class="calculator">
-        <label for="assessed-taxable-value">Assessed total value</label>
-        <input id="slider" name="assessed-taxable-value" type="range" min="0" max="100000" value="<%= total %>" step="1000" />
+        <label for="total">Assessed total value</label>
+        <input id="slider" name="total" type="range" min="0" max="100000" value="<%= total %>" step="1000" />
     </form>
 </script>
 <script type="text/template" id="input-advanced">
     <form class="calculator">
-        <label for="assessed-total-value">Assessed total value</label>
-        <input name="assessed-total-value" type="text" value="<%= total %>" />
-        <label for="assessed-taxable-value-county">Assessed taxable value for county tax</label>
-        <input name="assessed-taxable-value-county" type="text" value="<%= taxable_county %>" />
-        <label for="assessed-taxable-value-village">Assessed taxable value for village tax</label>
-        <input name="assessed-taxable-value-village" type="text" value="<%= taxable_village %>" />
-        <label for="assessed-taxable-value-school">Assessed taxable value for school tax</label>
-        <input name="assessed-taxable-value-school" type="text" value="<%= taxable_school %>" />
+        <label for="total">Assessed total value</label>
+        <input name="total" type="text" value="<%= total %>" />
+        <label for="taxable_county">Assessed taxable value for county tax</label>
+        <input name="taxable_county" type="text" value="<%= taxable_county %>" />
+        <label for="taxable_village">Assessed taxable value for village tax</label>
+        <input name="taxable_village" type="text" value="<%= taxable_village %>" />
+        <label for="taxable_school">Assessed taxable value for school tax</label>
+        <input name="taxable_school" type="text" value="<%= taxable_school %>" />
         <input type="submit" value="Go">
     </form>
 </script>
@@ -147,8 +147,20 @@ $.fn.serializeObject = function() {
             this.$el.html(template)
         },
         calculate: function(e) {
-            var d = $(e.currentTarget).serializeObject()
-            console.log(d)
+            var raw = $(e.currentTarget).serializeObject()
+            var validated = { total: parseFloat(raw.total) }
+
+            console.log(raw)
+            console.log(validated)
+            if (!validated.total) {
+//              alert('Something went wrong.')
+                return false;
+            }
+
+            var fields = ['taxable_county', 'taxable_village', 'taxable_school']
+            fields.map(function(name){
+                validated[name] = raw[name] ? parseFloat(raw[name]) : validated.total
+            })
             return false
         },
         events: {
