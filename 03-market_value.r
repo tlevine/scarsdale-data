@@ -41,7 +41,8 @@ Well it\'s apparently not just an inflation adjustment.') +
   geom_path()
 
 p <- function() {
-  pdf('plots/03-market_value.pdf', width = 11, height = 8.5)
+# pdf('plots/03-market_value.pdf', width = 11, height = 8.5)
+  png('plots/03-market_value.png', width = 800, height = 500)
   print(market.value.plot)
   dev.off()
 }
