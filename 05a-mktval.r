@@ -1,3 +1,6 @@
+library(ggplot2)
+library(scales)
+
 assess <- read.csv('05a-assessment_distribution.csv')
 
 assess.1 <- subset(assess, TAX == 'FULL MKT VAL')

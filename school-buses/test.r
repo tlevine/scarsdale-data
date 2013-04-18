@@ -3,7 +3,7 @@ library(testthat)
 library(plyr)
 library(sqldf)
 
-stops <- read.csv('busstops.csv')
+stops <- read.csv('bus_stops.csv')
 
 compare.trips <- function(a, b){
   # Compare a set of morning and afternoon trips.
