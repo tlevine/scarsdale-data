@@ -13,7 +13,7 @@ if (sum(assess$TAX != c('COUNTY', 'VILLAGE', 'SCHOOL')) > 0) {
 # Combine by row.
 assess$PARCEL <- rep(1:(nrow(assess)/3), each = 3)
 
-p.distributions <- aaply(c('COUNTY', 'VILLAGE', 'SCHOOL'), 1, function(tax){
+p.distributions <- alply(c('COUNTY', 'VILLAGE', 'SCHOOL'), 1, function(tax){
   ggplot(subset(assess, TAX == tax)) + aes(x = ASSESSED) +
     scale_y_continuous('Count') +
     labs(title = paste('Distribution of assessed values for', tax, 'taxes')) +
