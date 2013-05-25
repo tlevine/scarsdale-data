@@ -100,3 +100,12 @@ p <- function() {
   dev.off()
 }
 #p()
+
+
+find.exemptions <- function() {
+  print(sort(table(assess.cast$sd)))
+  sd1057 <- assess.cast[round(assess.cast$sd) == 1057,][,c('county','village','school')]
+  # Random sample
+  set.seed(324)
+  print(sd1057[sample.int(nrow(sd1057), 1) + 1:10,]) 
+}
